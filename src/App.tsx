@@ -1,6 +1,11 @@
 import { Switch } from './components/Switch';
-import { Search } from './components/Search';
 import { Footer } from './components/Footer';
+
+import { Home } from './pages/Home';
+
+import { ContextProvider } from './contexts/Context'
+
+import { BrowserRouter ,Route, Routes } from 'react-router-dom';
 
 import './App.css';
 
@@ -9,13 +14,20 @@ function App() {
 
     <div className='App'>
 
-      <Switch />
+      <ContextProvider>
+        <BrowserRouter>
 
-      <Search />
+          <Switch />
 
-      <Footer />
+          <Routes>
+            <Route path='/' element={<Home />} />
+          </Routes>
 
-      
+          <Footer />
+        </BrowserRouter>
+      </ContextProvider>
+
+    
     </div>
   );
 }

@@ -12,14 +12,12 @@ body {
   height: 100vh;
   overflow: hidden;
   background-image: url(./images/bg.jpg);
+  background-repeat: no-repeat;
   background-size: cover; 
-  background-position: bottom; 
-
+  background-position: bottom;
+  
   
  
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+

@@ -14,7 +14,7 @@
 .search-input input {
 
     height: 50px;
-    width: 710px;
+    width: 100%;
     border-radius: 10px;
     border: none;
     padding: 13px 15px;
@@ -31,4 +31,37 @@
     line-height: 24px;
 
     color: #6AA2D1;
+}
+
+
+
+@media(max-width:425px) {
+
+    .search-input  {
+
+        max-width: 334px;
+        text-align: center;
+    }
+
+    .search-input h1 {
+
+        font-size: 30px;
+        line-height: 37px;
+        
+        letter-spacing: 0.04em;
+    }
+
+    .search-input input {
+
+        width: 95%;
+    }
+
+    .search-input input, .search-input input::placeholder {
+
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+
+  
 }
