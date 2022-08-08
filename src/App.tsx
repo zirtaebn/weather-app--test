@@ -2,6 +2,10 @@ import { Switch } from './components/Switch';
 import { Footer } from './components/Footer';
 
 import { Home } from './pages/Home';
+import { Weather } from './pages/Weather';
+import { NextDays } from './pages/NextDays';
+
+
 
 import { ContextProvider } from './contexts/Context'
 
@@ -21,6 +25,8 @@ function App() {
 
           <Routes>
             <Route path='/' element={<Home />} />
+            <Route path='/weather' element={<Weather />} />
+            <Route path='/weather/nextdays' element={<NextDays />} />
           </Routes>
 
           <Footer />

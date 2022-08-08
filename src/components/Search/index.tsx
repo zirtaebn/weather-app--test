@@ -1,5 +1,6 @@
 import './styles.css';
 
+import Autocomplete from "react-google-autocomplete";
 
 import { Context } from '../../contexts/Context';
 
@@ -20,21 +21,33 @@ export const Search = () => {
     }else if(state.language.name === 'en') {
 
         phrase = "How's the weather today?";
-        placeholder = 'Search the city name'
+        placeholder = 'Enter a city name'
 
     }else {
 
         phrase = '¿Como está el tiempo hoy?';
         placeholder= 'Introduzca el nombre de la ciudad';
-    }
+    } 
 
     return(
 
         <div className='search-input'>
-            <h1>{phrase}</h1>
-            
-            <input type='text' placeholder={placeholder} autoFocus/>
+            <h1>{ phrase }</h1>
+
+            <Autocomplete
+                apiKey={process.env.REACT_APP_GOOGLE_API_KEY}
+                onPlaceSelected={(place) => {
+                    
+                    console.log(place.geometry.location.lat(), 'lat');
+                    console.log(place.geometry.location.lng(), 'long');
+                }}
+                language = { state.language.name }
+                placeholder={ placeholder } 
+                
+            />
+
         </div>
 
     )
 }
+
