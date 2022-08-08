@@ -80,9 +80,7 @@ export const Footer = () => {
 
                 </div>
             </div>
-
-
-
+            
             <p>{ phrase }</p>
         </footer>
 
