@@ -35,6 +35,9 @@ footer .languages {
     cursor: pointer;
 
     margin-right: 12px;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: bottom;
 
     
 }

@@ -10,8 +10,8 @@ export const Search = () => {
 
     const { state } = useContext(Context);
 
-    let phrase: string = 'Como está o tempo hoje?';
-    let placeholder:string = 'Digite o nome da cidade';
+    let phrase: string = '';
+    let placeholder:string = '';
 
     if(state.language.name === 'pt') {
 
@@ -23,7 +23,7 @@ export const Search = () => {
         phrase = "How's the weather today?";
         placeholder = 'Enter a city name'
 
-    }else {
+    }else if(state.language.name === 'es'){
 
         phrase = '¿Como está el tiempo hoy?';
         placeholder= 'Introduzca el nombre de la ciudad';

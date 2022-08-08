@@ -20,7 +20,6 @@ function App() {
 
       <ContextProvider>
         <BrowserRouter>
-
           <Switch />
 
           <Routes>

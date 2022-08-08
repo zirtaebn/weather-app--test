@@ -1,0 +1,30 @@
+.back-arrow {
+
+    width: 44px;
+    height: 44px;
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    cursor: pointer;
+
+
+    background-image: url('../../images/arrow.png');
+
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: bottom;
+}
+
+@media(max-width:425px) {
+
+    .back-arrow {
+
+        width: 24px;
+        height: 24px;
+        top: 20px;
+        left: 20px;
+        
+    }
+
+
+}
