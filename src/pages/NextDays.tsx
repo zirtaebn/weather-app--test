@@ -1,5 +1,7 @@
 import { Arrow } from '../components/Arrow';
 
+import { NextDaysData } from '../components/NextDaysData';
+
 
 export const NextDays = () => {
 
@@ -7,7 +9,7 @@ export const NextDays = () => {
 
         <div>
             <Arrow />
-            <h1>NEXT DAYS</h1>
+            <NextDaysData />
         </div>
     )
 }

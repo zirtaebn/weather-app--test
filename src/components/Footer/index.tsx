@@ -7,7 +7,6 @@ import { usePersistedData } from '../../utils/usePersistedData';
 import { useContext, useEffect } from 'react';
 
 
-    
 
 export const Footer = () => {
 

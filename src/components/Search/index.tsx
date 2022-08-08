@@ -1,14 +1,17 @@
 import './styles.css';
+import { useContext } from 'react';
 
 import Autocomplete from "react-google-autocomplete";
 
 import { Context } from '../../contexts/Context';
 
-import { useContext } from 'react';
+// import { usePersistedData } from '../../utils/usePersistedData';
+
+
 
 export const Search = () => {
 
-    const { state } = useContext(Context);
+    const { state, dispatch } = useContext(Context);
 
     let phrase: string = '';
     let placeholder:string = '';
@@ -29,6 +32,7 @@ export const Search = () => {
         placeholder= 'Introduzca el nombre de la ciudad';
     } 
 
+ 
     return(
 
         <div className='search-input'>
@@ -37,15 +41,21 @@ export const Search = () => {
             <Autocomplete
                 apiKey={process.env.REACT_APP_GOOGLE_API_KEY}
                 onPlaceSelected={(place) => {
-                    
-                    console.log(place.geometry.location.lat(), 'lat');
-                    console.log(place.geometry.location.lng(), 'long');
+
+                    dispatch({
+
+                        type: 'CHANGE_ADRESS',
+                        payload: {
+                
+                            lat: place.geometry.location.lat(), 
+                            lng:place.geometry.location.lng()
+                        }
+                    })
                 }}
                 language = { state.language.name }
                 placeholder={ placeholder } 
                 
             />
-
         </div>
 
     )
