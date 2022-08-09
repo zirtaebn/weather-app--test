@@ -3,13 +3,15 @@ import { reducerActionType } from '../types/reducerActionType';
 export type AdressType = {
 
     lat:string,
-    lng:string
+    lng:string,
+    
 }
 
 export const adressInitialState:AdressType = {
 
     lat: '',
-    lng: ''
+    lng: '',
+    
 }
 
 export const adressReducer = (state:AdressType, action:reducerActionType) => {

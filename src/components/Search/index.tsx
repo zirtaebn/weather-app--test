@@ -1,9 +1,7 @@
 import '../../css/Search.css';
 
 import { useContext } from 'react';
-
 import { useNavigate } from 'react-router-dom';
-
 import Autocomplete from "react-google-autocomplete";
 
 import { Context } from '../../contexts/Context';
@@ -51,7 +49,7 @@ export const Search = () => {
                         payload: {
                 
                             lat: place.geometry?.location?.lat(), 
-                            lng: place.geometry?.location?.lng()
+                            lng: place.geometry?.location?.lng(),
                         }
                     })
 

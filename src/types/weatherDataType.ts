@@ -1,6 +1,7 @@
 export type weatherDataType = {
 
-    name:string,
+    name?:string,
+    dt_txt:string,
     weather: [
         {
             description:string,
@@ -9,8 +10,9 @@ export type weatherDataType = {
     ],
     main: {
 
-        temp:number,
+        temp?:number,
         temp_max:number,
         temp_min:number
     }
 }
+
