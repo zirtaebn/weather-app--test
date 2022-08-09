@@ -1,15 +1,18 @@
-import './styles.css';
+import '../../css/Search.css';
+
 import { useContext } from 'react';
+
+import { useNavigate } from 'react-router-dom';
 
 import Autocomplete from "react-google-autocomplete";
 
 import { Context } from '../../contexts/Context';
 
-// import { usePersistedData } from '../../utils/usePersistedData';
-
 
 
 export const Search = () => {
+
+    const navigate = useNavigate();
 
     const { state, dispatch } = useContext(Context);
 
@@ -47,10 +50,12 @@ export const Search = () => {
                         type: 'CHANGE_ADRESS',
                         payload: {
                 
-                            lat: place.geometry.location.lat(), 
-                            lng:place.geometry.location.lng()
+                            lat: place.geometry?.location?.lat(), 
+                            lng: place.geometry?.location?.lng()
                         }
                     })
+
+                    navigate('/weather');
                 }}
                 language = { state.language.name }
                 placeholder={ placeholder } 

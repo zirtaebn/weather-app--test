@@ -1,5 +1,6 @@
+import '../../css/Switch.css';
+
 import { useContext, useEffect } from 'react';
-import './styles.css';
 
 import { Context } from '../../contexts/Context';
 
@@ -40,12 +41,12 @@ export const Switch = () => {
     return (
         <div className='switch-temp'>
             <div className='temps'>
-            <span>°F</span>
-            <label className='switch' >
-                <input type='checkbox' checked={state.temp.isToggle} onChange={onToggle}/>
-                <span className='slider'/>
-            </label>
-            <span>°C</span>
+                <span>°F</span>
+                <label className='switch' >
+                    <input type='checkbox' checked={state.temp.isToggle} onChange={onToggle}/>
+                    <span className='slider'/>
+                </label>
+                <span>°C</span>
             </div>        
         </div>
     )
