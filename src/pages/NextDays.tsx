@@ -1,7 +1,5 @@
 import { Arrow } from '../components/Arrow';
-
 import { NextDaysData } from '../components/NextDaysData';
-
 import { Link } from 'react-router-dom';
 
 

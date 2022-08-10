@@ -1,15 +1,13 @@
 import '../css/NotFound.css';
 
 import { useContext} from 'react';
-
-import { Context } from '../contexts/Context'
+import { Context } from '../contexts/Context';
 
 
 
 export const NotFound = () => {
 
     const { state } = useContext(Context);
-
     let phrase:string = '';
 
     if(state.language.name === 'pt') {

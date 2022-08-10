@@ -1,17 +1,26 @@
 import '../../css/Switch.css';
 
 import { useContext, useEffect } from 'react';
-
 import { Context } from '../../contexts/Context';
-
 import { usePersistedData } from '../../utils/usePersistedData';
 
 
 export const Switch = () => {
 
     const { state, dispatch } = useContext(Context);
-
     const persistedData = usePersistedData('temp',  state.temp.isToggle);
+    
+    const onToggle = () => {
+
+        dispatch({
+
+            type: 'CHANGE_TEMP',
+            payload: {
+
+                isToggle: !state.temp.isToggle
+            }
+        })
+    }
     
     useEffect(() => {
         
@@ -25,18 +34,6 @@ export const Switch = () => {
         })
         // eslint-disable-next-line
     },[]);
-
-    const onToggle = () => {
-
-        dispatch({
-
-            type: 'CHANGE_TEMP',
-            payload: {
-
-                isToggle: !state.temp.isToggle
-            }
-        })
-    }
 
     return (
         <div className='switch-temp'>

@@ -2,20 +2,18 @@ import '../../css/Search.css';
 
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Autocomplete from "react-google-autocomplete";
-
 import { Context } from '../../contexts/Context';
+import Autocomplete from "react-google-autocomplete";
 
 
 
 export const Search = () => {
 
-    const navigate = useNavigate();
-
     const { state, dispatch } = useContext(Context);
-
+    const navigate = useNavigate();
     let phrase: string = '';
     let placeholder:string = '';
+    
 
     if(state.language.name === 'pt') {
 
@@ -32,7 +30,6 @@ export const Search = () => {
         phrase = '¿Como está el tiempo hoy?';
         placeholder= 'Introduzca el nombre de la ciudad';
     } 
-
  
     return(
 

@@ -1,9 +1,7 @@
 import '../../css/Footer.css'
 
 import { Context } from '../../contexts/Context';
-
 import { usePersistedData } from '../../utils/usePersistedData';
-
 import { useContext, useEffect } from 'react';
 
 
@@ -11,8 +9,10 @@ import { useContext, useEffect } from 'react';
 export const Footer = () => {
 
     const { state, dispatch } = useContext(Context);
-
     const persistedData = usePersistedData('language',  state.language.name);
+    let phrase: string = '';
+    
+
     useEffect(() => {
         
         dispatch({
@@ -26,8 +26,6 @@ export const Footer = () => {
         // eslint-disable-next-line
     },[]);
 
-
-    let phrase: string = '';
 
     if(state.language.name === 'pt') {
 

@@ -79,8 +79,14 @@
     font-size: 12px;
     line-height: 15px;
     margin-top: 20px;
+    padding-bottom: 2px;
+
+    text-decoration: underline;
+    text-underline-offset: 2.5px;
 
 }
+
+
 
 @media(max-width:425px) {
 
