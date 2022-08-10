@@ -1,4 +1,4 @@
-import './css/App.css';
+import './assets/css/App.css';
 
 import { Switch } from './components/Switch';
 import { Footer } from './components/Footer';

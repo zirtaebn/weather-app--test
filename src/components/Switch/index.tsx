@@ -1,4 +1,4 @@
-import '../../css/Switch.css';
+import '../../assets/css/Switch.css';
 
 import { useContext, useEffect } from 'react';
 import { Context } from '../../contexts/Context';

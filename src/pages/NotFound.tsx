@@ -1,4 +1,4 @@
-import '../css/NotFound.css';
+import '../assets/css/NotFound.css';
 
 import { useContext} from 'react';
 import { Context } from '../contexts/Context';

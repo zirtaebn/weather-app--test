@@ -1,4 +1,4 @@
-import '../../css/WeatherData.css';
+import '../../assets/css/WeatherData.css';
 
 import { Link, useNavigate } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';

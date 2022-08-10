@@ -1,4 +1,4 @@
-import '../../css/NextDaysData.css';
+import '../../assets/css/NextDaysData.css';
 
 import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';

@@ -1,4 +1,4 @@
-import '../../css/Geolocation.css';
+import '../../assets/css/Geolocation.css';
 
 import { useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";

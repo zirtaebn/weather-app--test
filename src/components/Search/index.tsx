@@ -1,4 +1,4 @@
-import '../../css/Search.css';
+import '../../assets/css/Search.css';
 
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';

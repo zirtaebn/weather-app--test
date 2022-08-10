@@ -1,4 +1,4 @@
-import '../../css/Footer.css'
+import '../../assets/css/Footer.css'
 
 import { Context } from '../../contexts/Context';
 import { usePersistedData } from '../../utils/usePersistedData';
