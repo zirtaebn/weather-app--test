@@ -32,15 +32,15 @@ export const NextDaysData = () => {
 
     if(state.language.name === 'pt') {
 
-        subTitle = 'Previsão para os próximos 5 dias';
+        subTitle = 'Previsão para 5 dias';
        
     }else if(state.language.name === 'en') {
 
-        subTitle = 'Forecast for the next 5 days';
+        subTitle = 'Forecast for 5 days';
 
     }else if(state.language.name === 'es'){
 
-        subTitle = 'Previsión para los próximos 5 días';
+        subTitle = 'Previsión para 5 días';
 
     }
 
@@ -85,7 +85,7 @@ export const NextDaysData = () => {
         <div className='next-days-data'>
             { data && 
                 <>
-                    <h1>{cityName}</h1>
+                    <h1>{cityName.toUpperCase()}</h1>
                     <h2>{subTitle}</h2>   
                     { data.map((item, index) => (
                 

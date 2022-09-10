@@ -76,7 +76,7 @@ export const WeatherData = () => {
             { data && 
 
                 <>
-                    {data.name && <h1>{data.name}</h1>}
+                    {data.name && <h1>{data.name.toUpperCase()}</h1>}
                     <h2>{data.weather[0].description}</h2>
 
                     <div className='weather-data-row'>

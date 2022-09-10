@@ -3,10 +3,10 @@ import './App.css';
 import { Switch } from './components/Switch/Switch';
 import { Footer } from './components/Footer/Footer';
 
-import { Home } from './pages/Home';
-import { Weather } from './pages/Weather';
-import { NextDays } from './pages/NextDays';
-import { NotFound } from './pages/NotFound';
+import { Home } from './pages/Home/Home';
+import { Weather } from './pages/Weather/Weather';
+import { NextDays } from './pages/NextDays/NextDays';
+import { NotFound } from './pages/NotFound/NotFound';
 
 
 import { ContextProvider } from './contexts/Context'

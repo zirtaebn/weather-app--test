@@ -7,11 +7,13 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
 }
 
 footer .languages {
 
     display: flex;
+    justify-content: center;
 
 }
 
@@ -27,6 +29,13 @@ footer .languages {
     background-size: cover; 
     background-position: bottom;
 
+    
+}
+
+.languages div:last-child{
+
+    
+    margin-right: 0;
     
 }
 

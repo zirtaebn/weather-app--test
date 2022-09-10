@@ -20,7 +20,8 @@
     font-size: 20px;
     line-height: 24px;
     text-align: center;
-    margin-bottom: 110px;
+    margin-top: 0;
+    margin-bottom: 60px;
 }
 
 .next-days-data-row {
@@ -31,18 +32,28 @@
     margin-bottom: 15px;
 }
 
+.next-days-data-row:last-child {
+    
+    margin-bottom: 0;
+}
+
 .next-days-data-row .day { 
 
     font-weight: 700;
     font-size: 20px;
-    line-height: 24px;    
+    line-height: 24px;   
+    text-align: center;
+    width: 160px;
 }
+
 
 .next-days-data-row img{ 
 
-    width: 44px;
-    height: 44px;
-    margin: 0 43px 0 38px
+    width: 40px;
+    height: 40px;
+    margin: 0 40px 0 30px;
+
+    /* background-color: red; */
 }
 
 .next-days-data-row .temp-line {
