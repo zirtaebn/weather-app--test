@@ -1,5 +1,5 @@
-import { Arrow } from '../components/Arrow/Arrow';
-import { NextDaysData } from '../components/NextDaysData/NextDaysData';
+import { Arrow } from '../../components/Arrow/Arrow';
+import { NextDaysData } from '../../components/NextDaysData/NextDaysData';
 import { Link } from 'react-router-dom';
 
 
