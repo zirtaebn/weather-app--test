@@ -1,11 +1,13 @@
-import '../../assets/css/NextDaysData.css';
+import './NextDaysData.css';
 
-import { useContext, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+
 import { OPEN_WEATHER_BASE_URL } from '../../utils/openWeatherBaseURL';
 import { useErrorMessage } from '../../utils/useErrorMessage';
 import { Context } from '../../contexts/Context';
-import { weatherDataType } from '../../types/weatherDataType' 
+import { weatherDataType } from '../../types/weatherDataType';
+
+import { useContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';  
 
 

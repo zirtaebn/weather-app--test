@@ -32,17 +32,17 @@ footer .languages {
 
 div.pt {
 
-    background-image: url('../images/pt.png');
+    background-image: url('../../assets/images/pt.png');
 } 
 
 div.en {
 
-    background-image: url('../images/en.png');
+    background-image: url('../../assets/images/en.png');
 }
 
 div.es {
 
-    background-image: url('../images/es.png');
+    background-image: url('../../assets/images/es.png');
 }
 
 

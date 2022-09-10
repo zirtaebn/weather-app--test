@@ -1,7 +1,7 @@
-import './assets/css/App.css';
+import './App.css';
 
-import { Switch } from './components/Switch';
-import { Footer } from './components/Footer';
+import { Switch } from './components/Switch/Switch';
+import { Footer } from './components/Footer/Footer';
 
 import { Home } from './pages/Home';
 import { Weather } from './pages/Weather';

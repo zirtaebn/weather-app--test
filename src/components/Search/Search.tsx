@@ -1,8 +1,9 @@
-import '../../assets/css/Search.css';
+import './Search.css';
+
+import { Context } from '../../contexts/Context';
 
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Context } from '../../contexts/Context';
 import Autocomplete from "react-google-autocomplete";
 
 

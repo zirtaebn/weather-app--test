@@ -1,9 +1,9 @@
-import '../../assets/css/Footer.css'
+import './Footer.css';
 
 import { Context } from '../../contexts/Context';
 import { usePersistedData } from '../../utils/usePersistedData';
-import { useContext, useEffect } from 'react';
 
+import { useContext, useEffect } from 'react';
 
 
 export const Footer = () => {

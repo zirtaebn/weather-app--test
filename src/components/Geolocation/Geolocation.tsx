@@ -1,9 +1,11 @@
-import '../../assets/css/Geolocation.css';
+import './Geolocation.css';
+
+
+import { Context } from "../../contexts/Context";
+import { useErrorMessage } from '../../utils/useErrorMessage';
 
 import { useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
-import { Context } from "../../contexts/Context";
-import { useErrorMessage } from '../../utils/useErrorMessage';
 
 
 export const Geolocation = () => {

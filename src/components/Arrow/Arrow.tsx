@@ -1,4 +1,4 @@
-import '../../assets/css/Arrow.css';
+import './Arrow.css';
 
 export const Arrow = () => {
 

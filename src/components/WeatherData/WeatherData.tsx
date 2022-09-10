@@ -1,12 +1,13 @@
-import '../../assets/css/WeatherData.css';
+import './WeatherData.css';
 
-import { Link, useNavigate } from 'react-router-dom';
-import { useContext, useEffect, useState } from 'react';
 import { OPEN_WEATHER_BASE_URL } from '../../utils/openWeatherBaseURL';
 import { useErrorMessage } from '../../utils/useErrorMessage';
 import { Context } from '../../contexts/Context';
-import { weatherDataType } from '../../types/weatherDataType'
+import { weatherDataType } from '../../types/weatherDataType';
+
 import axios from 'axios';
+import { Link, useNavigate } from 'react-router-dom';
+import { useContext, useEffect, useState } from 'react';
 
 
 export const WeatherData = () => {

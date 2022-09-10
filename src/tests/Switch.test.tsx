@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import { Switch } from '../components/Switch';
+import { Switch } from '../components/Switch/Switch';
 import "@testing-library/jest-dom/extend-expect";
 
 

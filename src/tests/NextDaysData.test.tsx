@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import { NextDaysData } from '../components/NextDaysData';
+import { NextDaysData } from '../components/NextDaysData/NextDaysData';
 
 
 it('it should have a "next-days-data" div', () => {

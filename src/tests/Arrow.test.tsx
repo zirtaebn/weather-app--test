@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import { Arrow } from '../components/Arrow';
+import { Arrow } from '../components/Arrow/Arrow';
 
 it('it should have a "back-arrow" div', () => {
 

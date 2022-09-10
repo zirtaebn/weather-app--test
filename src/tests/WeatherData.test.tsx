@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import { WeatherData } from '../components/WeatherData';
+import { WeatherData } from '../components/WeatherData/WeatherData';
 
 
 it('it should have a "weather-data" div', () => {

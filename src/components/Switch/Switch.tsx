@@ -1,8 +1,9 @@
-import '../../assets/css/Switch.css';
+import './Switch.css';
 
-import { useContext, useEffect } from 'react';
 import { Context } from '../../contexts/Context';
 import { usePersistedData } from '../../utils/usePersistedData';
+
+import { useContext, useEffect } from 'react';
 
 
 export const Switch = () => {
