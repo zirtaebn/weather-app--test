@@ -1,10 +1,8 @@
-import { useReducer, createContext} from "react";
-
-
 import { LanguageType, languageInitialState, languageReducer} from '../reduces/languageReducer';
 import { AdressType, adressInitialState, adressReducer} from '../reduces/adressReducer';
 import { TempType, tempInitialState, tempReducer} from '../reduces/tempReducer'
 
+import { useReducer, createContext} from "react";
 import { reducerActionType } from "../types/reducerActionType";
 
 type initialStateType = {
@@ -45,7 +43,6 @@ interface Props {
 
     children: React.ReactNode;
 }
-
 
 export const ContextProvider: React.FC<Props> = ({ children }) => {
 

@@ -14,7 +14,8 @@ export const useLanguageString = () => {
         searchPlaceholderMessage: '',
         weatherDataMessage: '', 
         errorMessage: '',
-        subErrorMessage: ''
+        subErrorMessage: '',
+        notFoundPageMessage: ''
 
     }
 
@@ -31,7 +32,8 @@ export const useLanguageString = () => {
                 searchPlaceholderMessage:'Digite o nome da cidade',
                 weatherDataMessage:'Ver previsão para os próximos 5 dias',
                 errorMessage:'Houve um erro!',
-                subErrorMessage:'Verifique a conexão.'
+                subErrorMessage:'Verifique a conexão.',
+                notFoundPageMessage:'Página não encontrada'
             }
         
         // eslint-disable-next-line
@@ -48,7 +50,8 @@ export const useLanguageString = () => {
                 searchPlaceholderMessage:'Enter a city name',
                 weatherDataMessage:'See forecast for the next 5 days',
                 errorMessage:"There's been an error!",
-                subErrorMessage:'Check your connection.'
+                subErrorMessage:'Check your connection.',
+                notFoundPageMessage:'Page not found'
             }
         
         // eslint-disable-next-line
@@ -65,7 +68,8 @@ export const useLanguageString = () => {
                 searchPlaceholderMessage:'Introduzca el nombre de la ciudad',
                 weatherDataMessage:'Ver previsión para los próximos 5 días',
                 errorMessage:'¡Ha habido un error!',
-                subErrorMessage:'Comprueba tu conexión.'
+                subErrorMessage:'Comprueba tu conexión.',
+                notFoundPageMessage:'Página no encontrada'
             }
         
         // eslint-disable-next-line

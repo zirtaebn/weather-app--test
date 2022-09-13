@@ -7,5 +7,6 @@ export type languageStringType = {
     searchPlaceholderMessage: string,
     weatherDataMessage: string,
     errorMessage: string,
-    subErrorMessage: string
+    subErrorMessage: string,
+    notFoundPageMessage:string
 }

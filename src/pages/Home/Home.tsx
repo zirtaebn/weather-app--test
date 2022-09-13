@@ -3,7 +3,6 @@ import { Geolocation } from '../../components/Geolocation/Geolocation';
 
 export const Home = () => {
     
-
     return (
 
        <>
