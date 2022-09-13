@@ -1,13 +1,11 @@
 import './Search.css';
 
 import { Context } from '../../contexts/Context';
+import { useLanguageString } from '../../utils/useLanguageString';
 
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Autocomplete from "react-google-autocomplete";
-import { useLanguageString } from '../../utils/useLanguageString';
-
-
 
 export const Search = () => {
 
@@ -15,7 +13,6 @@ export const Search = () => {
     const { searchMessage, searchPlaceholderMessage } = useLanguageString();
     const navigate = useNavigate();
 
-   
     return(
 
         <div className='search-input'>

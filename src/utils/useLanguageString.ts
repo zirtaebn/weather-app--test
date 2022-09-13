@@ -2,8 +2,6 @@ import { useContext } from 'react';
 import { Context } from '../contexts/Context';
 import { languageStringType } from '../types/languageStringType';
 
-
-
 export const useLanguageString = () => {
 
     const { state } = useContext(Context);

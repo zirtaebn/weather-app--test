@@ -9,8 +9,6 @@ import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
 
-
-
 export const WeatherData = () => {
 
     const { state } = useContext(Context);

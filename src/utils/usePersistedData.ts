@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-export const usePersistedData = (key:string, initialState:any) => {
+export const usePersistedData = (key:string, initialState:string) => {
 
     useEffect(() => {
 

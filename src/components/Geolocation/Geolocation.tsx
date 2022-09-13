@@ -3,11 +3,8 @@ import './Geolocation.css';
 import { Context } from "../../contexts/Context";
 import { useLanguageString } from '../../utils/useLanguageString';
 
-
 import { useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
-
-
 
 export const Geolocation = () => {
 

@@ -5,11 +5,10 @@ import { usePersistedData } from '../../utils/usePersistedData';
 
 import { useContext, useEffect } from 'react';
 
-
 export const Switch = () => {
 
     const { state, dispatch } = useContext(Context);
-    const persistedData = usePersistedData('temp',  state.temp.isToggle);
+    const persistedData = usePersistedData('temp',  JSON.stringify(state.temp.isToggle));
     
     const onToggle = () => {
 

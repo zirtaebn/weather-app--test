@@ -1,6 +1,5 @@
 import './NextDaysData.css';
 
-
 import { OPEN_WEATHER_BASE_URL } from '../../utils/openWeatherBaseURL';
 import { Context } from '../../contexts/Context';
 import { weatherDataType } from '../../types/weatherDataType';
@@ -9,8 +8,6 @@ import { useLanguageString } from '../../utils/useLanguageString';
 import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';  
-
-
 
 export const NextDaysData = () => {
 
@@ -91,8 +88,8 @@ export const NextDaysData = () => {
             { isLoading &&
 
                 <>  
-                    <h1>{errorMessage}</h1>
-                    <h2>{subErrorMessage}</h2>
+                    <h1>{ errorMessage }</h1>
+                    <h2>{ subErrorMessage }</h2>
                 </>
 
             }

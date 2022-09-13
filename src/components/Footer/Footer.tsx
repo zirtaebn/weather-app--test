@@ -6,12 +6,12 @@ import { usePersistedData } from '../../utils/usePersistedData';
 import { useContext, useEffect } from 'react';
 import { useLanguageString } from '../../utils/useLanguageString';
 
-
 export const Footer = () => {
 
     const { state, dispatch } = useContext(Context);
+    const { footerMessage } = useLanguageString();
     const persistedData = usePersistedData('language',  state.language.name);
-    const {footerMessage} = useLanguageString();
+    
     
 
     useEffect(() => {
