@@ -12,7 +12,7 @@ import { useContext, useEffect, useState } from 'react';
 export const WeatherData = () => {
 
     const { state } = useContext(Context);
-    const [ data, setData ] = useState<weatherDataType | undefined>();
+    const [ weatherData, setWeatherData ] = useState<weatherDataType | undefined>();
     const [ isLoading, setIsloading ] = useState(false);
     const URL = OPEN_WEATHER_BASE_URL('weather');
     const navigate = useNavigate();
@@ -31,7 +31,7 @@ export const WeatherData = () => {
             .then(response => {
 
                 setIsloading(true);
-                setData(response.data);
+                setWeatherData(response.data);
                 setIsloading(false);
             })
             .catch(err => {
@@ -50,22 +50,26 @@ export const WeatherData = () => {
 
         <div className='weather-data'>
 
-            { data && 
+            { weatherData && weatherData.name && weatherData.main.temp &&
 
                 <>
-                    {data.name && <h1>{data.name.toUpperCase()}</h1>}
-                    <h2>{data.weather[0].description}</h2>
+                    <h1>{weatherData.name.toUpperCase()}</h1>
+                    <h2>{weatherData.weather[0].description}</h2>
 
                     <div className='weather-data-row'>
-                        { data.main.temp && <p>{data.main.temp.toFixed(0)}°</p> }
-                        <img src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`} alt='open weather icon' />
-                    </div>
-                    <div className='weather-data-temps'>
-                        <span>MAX:</span><p>{data.main.temp_max.toFixed(0)}°</p>
-                        <span>MIN:</span><p>{data.main.temp_min.toFixed(0)}°</p>
+                        <p>{weatherData.main.temp.toFixed(0)}°</p>
+                        <img 
+                            src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`} 
+                            alt='open weather icon' 
+                        />
                     </div>
 
-                    <Link className='link' to='/nextdays'>{weatherDataMessage}</Link>
+                    <div className='weather-data-temps'>
+                        <span>MAX:</span><p>{weatherData.main.temp_max.toFixed(0)}°</p>
+                        <span>MIN:</span><p>{weatherData.main.temp_min.toFixed(0)}°</p>
+                    </div>
+
+                    <Link className='link' to='/nextdays'>{ weatherDataMessage }</Link>
                 </>
             
             }

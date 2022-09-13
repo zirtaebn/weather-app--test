@@ -12,8 +12,6 @@ export const Footer = () => {
     const { footerMessage } = useLanguageString();
     const persistedData = usePersistedData('language',  state.language.name);
     
-    
-
     useEffect(() => {
         
         dispatch({
