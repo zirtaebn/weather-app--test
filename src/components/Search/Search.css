@@ -82,6 +82,24 @@
     color: #6AA2D1;
 }
 
+@media(max-width:768px) {
+
+    .search-input  {
+
+        max-width: 90%;
+       
+    }
+
+    .search-input h1 {
+
+        font-size: 35px;
+        line-height: 45px;
+        
+        letter-spacing: 0.08em;
+    }
+
+
+}
 
 @media(max-width:425px) {
 
@@ -95,8 +113,7 @@
 
         font-size: 30px;
         line-height: 37px;
-        
-        letter-spacing: 0.04em;
+
     }
 
     .search-input input {

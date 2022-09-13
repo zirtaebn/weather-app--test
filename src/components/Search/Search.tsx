@@ -5,37 +5,21 @@ import { Context } from '../../contexts/Context';
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Autocomplete from "react-google-autocomplete";
+import { useSearchMessage } from '../../utils/useSearchMessage';
 
 
 
 export const Search = () => {
 
     const { state, dispatch } = useContext(Context);
+    const { searchMessage, placeholderMessage } = useSearchMessage();
     const navigate = useNavigate();
-    let phrase: string = '';
-    let placeholder:string = '';
-    
 
-    if(state.language.name === 'pt') {
-
-        phrase = 'Como está o tempo hoje?';
-        placeholder = 'Digite o nome da cidade'
-
-    }else if(state.language.name === 'en') {
-
-        phrase = "How's the weather today?";
-        placeholder = 'Enter a city name'
-
-    }else if(state.language.name === 'es'){
-
-        phrase = '¿Como está el tiempo hoy?';
-        placeholder= 'Introduzca el nombre de la ciudad';
-    } 
- 
+   
     return(
 
         <div className='search-input'>
-            <h1>{ phrase }</h1>
+            <h1>{ searchMessage }</h1>
 
             <Autocomplete
                 apiKey={process.env.REACT_APP_GOOGLE_API_KEY}
@@ -54,8 +38,7 @@ export const Search = () => {
                     navigate('/weather');
                 }}
                 language = { state.language.name }
-                placeholder={ placeholder } 
-                
+                placeholder={ placeholderMessage }    
             />
         </div>
 

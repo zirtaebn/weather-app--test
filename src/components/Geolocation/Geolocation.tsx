@@ -1,11 +1,11 @@
 import './Geolocation.css';
 
-
 import { Context } from "../../contexts/Context";
 import { useErrorMessage } from '../../utils/useErrorMessage';
 
 import { useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
+import { useGeolocationMessage } from '../../utils/useGeolocationMessage';
 
 
 export const Geolocation = () => {
@@ -14,7 +14,7 @@ export const Geolocation = () => {
     const { error, subError } = useErrorMessage();
     const [ isLoading, setIsloading ] = useState(false);
     const navigate = useNavigate();
-    let phrase: string = '';
+    let geolocationMessage = useGeolocationMessage();
     
     const success = (pos:GeolocationPosition) => {
 
@@ -48,26 +48,12 @@ export const Geolocation = () => {
     
     }
 
-
-    if(state.language.name === 'pt') {
-
-        phrase = 'Ver previsão de onde você está';
-
-    }else if(state.language.name === 'en') {
-
-        phrase = 'See forecast from where you are';
-        
-    }else if(state.language.name === 'es'){
-
-        phrase = 'Ver previsión desde donde estás';
-    }
-
     return(
 
         <>
             { state.adress &&
 
-                <div className='geo' onClick={getGeolocation}>{phrase}</div>
+                <div className='geo' onClick={getGeolocation}>{geolocationMessage}</div>
 
             }
 

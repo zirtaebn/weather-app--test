@@ -84,6 +84,17 @@ input:checked + .slider::before {
   transform: translateX(20px);
 }
 
+
+@media(max-width:768px) {
+
+  .switch-temp {
+
+    top: 20px;
+    right: 20px;
+  
+  }
+}
+
 @media(max-width:425px) {
 
   .switch-temp {

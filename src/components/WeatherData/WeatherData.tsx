@@ -8,6 +8,7 @@ import { weatherDataType } from '../../types/weatherDataType';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
+import { useWeatherDataMessage } from '../../utils/useWeatherDataMessage';
 
 
 export const WeatherData = () => {
@@ -16,32 +17,11 @@ export const WeatherData = () => {
     const { error, subError } = useErrorMessage();
     const [ data, setData ] = useState<weatherDataType | undefined>();
     const [ isLoading, setIsloading ] = useState(false);
+    const URL = OPEN_WEATHER_BASE_URL('weather');
     const navigate = useNavigate();
-    let units:string;
-    let phrase: string = '';
-   
-
-    if(state.temp.isToggle) {
-
-        units = 'metric'
-    }else {
-
-        units = 'imperial'
-    }
-
-    if(state.language.name === 'pt') {
-
-        phrase = 'Ver previsão para os próximos 5 dias';
-      
-    }else if(state.language.name === 'en') {
-
-        phrase = 'See forecast for the next 5 days';
-      
-    }else if(state.language.name === 'es'){
-
-        phrase = 'Ver previsión para los próximos 5 días';
-    }
-
+    const weatherDataMessage = useWeatherDataMessage();
+  
+    
     useEffect(() => {
 
         if(!state.adress.lat && !state.adress.lng) {
@@ -50,7 +30,7 @@ export const WeatherData = () => {
 
         }else {
 
-            axios.get(`${OPEN_WEATHER_BASE_URL}/weather?lat=${state.adress.lat}&lon=${state.adress.lng}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&lang=${state.language.name}&units=${units}`)
+            axios.get(URL)
             .then(response => {
 
                 setIsloading(true);
@@ -88,7 +68,7 @@ export const WeatherData = () => {
                         <span>MIN:</span><p>{data.main.temp_min.toFixed(0)}°</p>
                     </div>
 
-                    <Link className='link' to='/nextdays'>{phrase}</Link>
+                    <Link className='link' to='/nextdays'>{weatherDataMessage}</Link>
                 </>
             
             }

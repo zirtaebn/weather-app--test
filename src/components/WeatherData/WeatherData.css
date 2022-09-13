@@ -85,7 +85,17 @@
 
 }
 
+@media(max-width:768px) {
 
+    .weather-data h1 {
+
+        font-size: 43px;
+        line-height: 40px;
+        letter-spacing: 0.05em;
+    }
+
+
+}
 
 @media(max-width:425px) {
 

@@ -88,9 +88,40 @@
     }
 
 
+    .next-days-data-row .day {
+        
+        font-size: 15px;
+        line-height: 20px; 
+        width: 140px;
+        
+    }
+
+    
+    .next-days-data-row img{ 
+
+        width: 30px;
+        height: 30px;
+
+        margin: 0 30px 0 20px;
+    }
+
 }
 
-@media(max-width:425px) {
+@media(max-width:700px) {
+
+    .next-days-data-row {
+
+        display: flex;
+        justify-content: center;
+    }
+
+    .next-days-data-row span {
+
+        display: none;
+    }
+}
+
+@media(max-width:495px) {
 
     .next-days-data h1 {
 
@@ -112,12 +143,7 @@
         
     }
 
-    .next-days-data-row {
-
-        display: flex;
-        justify-content: center;
-    }
-    
+ 
     .next-days-data-row img{ 
 
         width: 20px;
@@ -137,11 +163,6 @@
     
         font-size: 12px;
         line-height: 15px;
-    }
-
-    .next-days-data-row span {
-
-        display: none;
     }
 }
 

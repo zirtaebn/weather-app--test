@@ -4,13 +4,14 @@ import { Context } from '../../contexts/Context';
 import { usePersistedData } from '../../utils/usePersistedData';
 
 import { useContext, useEffect } from 'react';
+import { useFooterMessage } from '../../utils/useFooterMessage';
 
 
 export const Footer = () => {
 
     const { state, dispatch } = useContext(Context);
     const persistedData = usePersistedData('language',  state.language.name);
-    let phrase: string = '';
+    const footerMessage = useFooterMessage();
     
 
     useEffect(() => {
@@ -26,20 +27,6 @@ export const Footer = () => {
         // eslint-disable-next-line
     },[]);
 
-
-    if(state.language.name === 'pt') {
-
-        phrase = 'Idioma selecionado: Português.';
-
-    }else if(state.language.name === 'en') {
-
-        phrase = 'Selected language: English.';
-
-    }else if(state.language.name === 'es'){
-
-        phrase = 'Idioma seleccionado: Español.'
-    }
-    
 
     const handleChangeLanguage = (language: string) => {
 
@@ -79,7 +66,7 @@ export const Footer = () => {
                 </div>
             </div>
             
-            <p>{ phrase }</p>
+            <p>{ footerMessage }</p>
         </footer>
 
 

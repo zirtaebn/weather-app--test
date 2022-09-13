@@ -9,6 +9,7 @@ import { weatherDataType } from '../../types/weatherDataType';
 import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';  
+import { useNextDaysDataMessage } from '../../utils/useNextDaysDataMessage';
 
 
 export const NextDaysData = () => {
@@ -19,31 +20,10 @@ export const NextDaysData = () => {
     const [ cityName, setCityName ] = useState('');
     const [ isLoading, setIsloading ] = useState(false);
     const navigate = useNavigate();
-    let units:string;
-    let subTitle: string = '';
+    const URL = OPEN_WEATHER_BASE_URL('forecast');
+    let nextDaysWeatherMessage = useNextDaysDataMessage(); 
     
-    if(state.temp.isToggle) {
-
-        units = 'metric'
-    }else {
-
-        units = 'imperial'
-    }
-
-    if(state.language.name === 'pt') {
-
-        subTitle = 'Previsão para 5 dias';
-       
-    }else if(state.language.name === 'en') {
-
-        subTitle = 'Forecast for 5 days';
-
-    }else if(state.language.name === 'es'){
-
-        subTitle = 'Previsión para 5 días';
-
-    }
-
+   
     useEffect(() => {
 
         if(!state.adress.lat && !state.adress.lng) {
@@ -52,7 +32,7 @@ export const NextDaysData = () => {
 
         }else{
 
-            axios.get(`${OPEN_WEATHER_BASE_URL}/forecast?lat=${state.adress.lat}&lon=${state.adress.lng}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&lang=${state.language.name}&units=${units}`)
+            axios.get(URL)
             .then(response => {
 
                 const date = new Date(new Date().setHours(18)).getHours();
@@ -60,7 +40,7 @@ export const NextDaysData = () => {
             
                 const list = response.data.list.filter((item:any) => {
 
-                const weatherDate = new Date(item.dt_txt).getHours();    
+                    const weatherDate = new Date(item.dt_txt).getHours();    
 
                     return weatherDate === date
                 })      
@@ -86,7 +66,7 @@ export const NextDaysData = () => {
             { data && 
                 <>
                     <h1>{cityName.toUpperCase()}</h1>
-                    <h2>{subTitle}</h2>   
+                    <h2>{nextDaysWeatherMessage}</h2>   
                     { data.map((item, index) => (
                 
                         <div className='next-days-data-row' key={index}>
