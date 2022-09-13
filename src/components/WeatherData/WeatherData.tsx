@@ -8,7 +8,7 @@ import { weatherDataType } from '../../types/weatherDataType';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
-import { useWeatherDataMessage } from '../../utils/useWeatherDataMessage';
+import { useLanguageString } from '../../utils/useLanguageString';
 
 
 export const WeatherData = () => {
@@ -19,7 +19,7 @@ export const WeatherData = () => {
     const [ isLoading, setIsloading ] = useState(false);
     const URL = OPEN_WEATHER_BASE_URL('weather');
     const navigate = useNavigate();
-    const weatherDataMessage = useWeatherDataMessage();
+    const {weatherDataMessage} = useLanguageString();
   
     
     useEffect(() => {

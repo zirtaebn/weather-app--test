@@ -5,14 +5,14 @@ import { Context } from '../../contexts/Context';
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Autocomplete from "react-google-autocomplete";
-import { useSearchMessage } from '../../utils/useSearchMessage';
+import { useLanguageString } from '../../utils/useLanguageString';
 
 
 
 export const Search = () => {
 
     const { state, dispatch } = useContext(Context);
-    const { searchMessage, placeholderMessage } = useSearchMessage();
+    const { searchMessage, searchPlaceholderMessage } = useLanguageString();
     const navigate = useNavigate();
 
    
@@ -38,7 +38,7 @@ export const Search = () => {
                     navigate('/weather');
                 }}
                 language = { state.language.name }
-                placeholder={ placeholderMessage }    
+                placeholder={ searchPlaceholderMessage }    
             />
         </div>
 

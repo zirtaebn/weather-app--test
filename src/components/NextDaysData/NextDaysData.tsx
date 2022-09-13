@@ -9,7 +9,7 @@ import { weatherDataType } from '../../types/weatherDataType';
 import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';  
-import { useNextDaysDataMessage } from '../../utils/useNextDaysDataMessage';
+import { useLanguageString } from '../../utils/useLanguageString';
 
 
 export const NextDaysData = () => {
@@ -21,7 +21,7 @@ export const NextDaysData = () => {
     const [ isLoading, setIsloading ] = useState(false);
     const navigate = useNavigate();
     const URL = OPEN_WEATHER_BASE_URL('forecast');
-    let nextDaysWeatherMessage = useNextDaysDataMessage(); 
+    let {nextDaysDataMessage} = useLanguageString(); 
     
    
     useEffect(() => {
@@ -66,7 +66,7 @@ export const NextDaysData = () => {
             { data && 
                 <>
                     <h1>{cityName.toUpperCase()}</h1>
-                    <h2>{nextDaysWeatherMessage}</h2>   
+                    <h2>{nextDaysDataMessage}</h2>   
                     { data.map((item, index) => (
                 
                         <div className='next-days-data-row' key={index}>

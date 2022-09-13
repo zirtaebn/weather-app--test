@@ -4,14 +4,14 @@ import { Context } from '../../contexts/Context';
 import { usePersistedData } from '../../utils/usePersistedData';
 
 import { useContext, useEffect } from 'react';
-import { useFooterMessage } from '../../utils/useFooterMessage';
+import { useLanguageString } from '../../utils/useLanguageString';
 
 
 export const Footer = () => {
 
     const { state, dispatch } = useContext(Context);
     const persistedData = usePersistedData('language',  state.language.name);
-    const footerMessage = useFooterMessage();
+    const {footerMessage} = useLanguageString();
     
 
     useEffect(() => {

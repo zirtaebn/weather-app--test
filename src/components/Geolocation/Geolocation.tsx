@@ -5,7 +5,7 @@ import { useErrorMessage } from '../../utils/useErrorMessage';
 
 import { useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
-import { useGeolocationMessage } from '../../utils/useGeolocationMessage';
+import { useLanguageString } from '../../utils/useLanguageString';
 
 
 export const Geolocation = () => {
@@ -14,7 +14,7 @@ export const Geolocation = () => {
     const { error, subError } = useErrorMessage();
     const [ isLoading, setIsloading ] = useState(false);
     const navigate = useNavigate();
-    let geolocationMessage = useGeolocationMessage();
+    let { geolocationMessage }= useLanguageString();
     
     const success = (pos:GeolocationPosition) => {
 
