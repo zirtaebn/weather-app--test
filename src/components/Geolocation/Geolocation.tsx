@@ -1,20 +1,20 @@
 import './Geolocation.css';
 
 import { Context } from "../../contexts/Context";
-import { useErrorMessage } from '../../utils/useErrorMessage';
+import { useLanguageString } from '../../utils/useLanguageString';
+
 
 import { useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
-import { useLanguageString } from '../../utils/useLanguageString';
+
 
 
 export const Geolocation = () => {
 
     const { state, dispatch } = useContext(Context);
-    const { error, subError } = useErrorMessage();
     const [ isLoading, setIsloading ] = useState(false);
     const navigate = useNavigate();
-    let { geolocationMessage }= useLanguageString();
+    let { geolocationMessage, errorMessage, subErrorMessage }= useLanguageString();
     
     const success = (pos:GeolocationPosition) => {
 
@@ -60,8 +60,8 @@ export const Geolocation = () => {
             { isLoading &&
 
                 <div className='error'>
-                    <h3>{error}</h3>
-                    <h4>{subError}</h4>
+                    <h3>{errorMessage}</h3>
+                    <h4>{subErrorMessage}</h4>
                 </ div>
             
             }

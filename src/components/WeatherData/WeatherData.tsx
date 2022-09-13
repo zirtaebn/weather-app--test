@@ -1,25 +1,24 @@
 import './WeatherData.css';
 
 import { OPEN_WEATHER_BASE_URL } from '../../utils/openWeatherBaseURL';
-import { useErrorMessage } from '../../utils/useErrorMessage';
+import { useLanguageString } from '../../utils/useLanguageString';
 import { Context } from '../../contexts/Context';
 import { weatherDataType } from '../../types/weatherDataType';
 
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
-import { useLanguageString } from '../../utils/useLanguageString';
+
 
 
 export const WeatherData = () => {
 
     const { state } = useContext(Context);
-    const { error, subError } = useErrorMessage();
     const [ data, setData ] = useState<weatherDataType | undefined>();
     const [ isLoading, setIsloading ] = useState(false);
     const URL = OPEN_WEATHER_BASE_URL('weather');
     const navigate = useNavigate();
-    const {weatherDataMessage} = useLanguageString();
+    const { weatherDataMessage, errorMessage, subErrorMessage } = useLanguageString();
   
     
     useEffect(() => {
@@ -76,8 +75,8 @@ export const WeatherData = () => {
             { isLoading &&
 
                 <>  
-                    <h1>{error}</h1>
-                    <h2>{subError}</h2>
+                    <h1>{errorMessage}</h1>
+                    <h2>{subErrorMessage}</h2>
                 </>
                 
             }

@@ -12,7 +12,9 @@ export const useLanguageString = () => {
         nextDaysDataMessage: '',
         searchMessage: '',
         searchPlaceholderMessage: '',
-        weatherDataMessage: ''
+        weatherDataMessage: '', 
+        errorMessage: '',
+        subErrorMessage: ''
 
     }
 
@@ -27,7 +29,9 @@ export const useLanguageString = () => {
                 nextDaysDataMessage:'Previsão para 5 dias',
                 searchMessage:'Como está o tempo hoje?',
                 searchPlaceholderMessage:'Digite o nome da cidade',
-                weatherDataMessage:'Ver previsão para os próximos 5 dias'
+                weatherDataMessage:'Ver previsão para os próximos 5 dias',
+                errorMessage:'Houve um erro!',
+                subErrorMessage:'Verifique a conexão.'
             }
         
         // eslint-disable-next-line
@@ -42,7 +46,9 @@ export const useLanguageString = () => {
                 nextDaysDataMessage:'Forecast for 5 days',
                 searchMessage:"How's the weather today?",
                 searchPlaceholderMessage:'Enter a city name',
-                weatherDataMessage:'See forecast for the next 5 days'
+                weatherDataMessage:'See forecast for the next 5 days',
+                errorMessage:"There's been an error!",
+                subErrorMessage:'Check your connection.'
             }
         
         // eslint-disable-next-line
@@ -57,7 +63,9 @@ export const useLanguageString = () => {
                 nextDaysDataMessage:'Previsión para 5 días',
                 searchMessage:'¿Como está el tiempo hoy?',
                 searchPlaceholderMessage:'Introduzca el nombre de la ciudad',
-                weatherDataMessage:'Ver previsión para los próximos 5 días'
+                weatherDataMessage:'Ver previsión para los próximos 5 días',
+                errorMessage:'¡Ha habido un error!',
+                subErrorMessage:'Comprueba tu conexión.'
 
             }
         

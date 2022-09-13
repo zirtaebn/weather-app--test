@@ -2,26 +2,25 @@ import './NextDaysData.css';
 
 
 import { OPEN_WEATHER_BASE_URL } from '../../utils/openWeatherBaseURL';
-import { useErrorMessage } from '../../utils/useErrorMessage';
 import { Context } from '../../contexts/Context';
 import { weatherDataType } from '../../types/weatherDataType';
+import { useLanguageString } from '../../utils/useLanguageString';
 
 import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';  
-import { useLanguageString } from '../../utils/useLanguageString';
+
 
 
 export const NextDaysData = () => {
 
     const { state } = useContext(Context);
-    const { error, subError } = useErrorMessage();
     const [ data, setData ] = useState<weatherDataType[] | undefined>();
     const [ cityName, setCityName ] = useState('');
     const [ isLoading, setIsloading ] = useState(false);
     const navigate = useNavigate();
     const URL = OPEN_WEATHER_BASE_URL('forecast');
-    let {nextDaysDataMessage} = useLanguageString(); 
+    let { nextDaysDataMessage, errorMessage, subErrorMessage} = useLanguageString(); 
     
    
     useEffect(() => {
@@ -92,8 +91,8 @@ export const NextDaysData = () => {
             { isLoading &&
 
                 <>  
-                    <h1>{error}</h1>
-                    <h2>{subError}</h2>
+                    <h1>{errorMessage}</h1>
+                    <h2>{subErrorMessage}</h2>
                 </>
 
             }
