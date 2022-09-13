@@ -1,11 +1,13 @@
 import { useContext } from 'react';
 import { Context } from '../contexts/Context';
+import { languageStringType } from '../types/languageStringType';
+
 
 
 export const useLanguageString = () => {
 
     const { state } = useContext(Context);
-    const languageString = {
+    const languageString:languageStringType = {
 
         footerMessage: '',
         geolocationMessage: '',
@@ -66,7 +68,6 @@ export const useLanguageString = () => {
                 weatherDataMessage:'Ver previsión para los próximos 5 días',
                 errorMessage:'¡Ha habido un error!',
                 subErrorMessage:'Comprueba tu conexión.'
-
             }
         
         // eslint-disable-next-line
