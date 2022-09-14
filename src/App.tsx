@@ -5,7 +5,7 @@ import { Footer } from './components/Footer/Footer';
 
 import { Home } from './pages/Home/Home';
 import { Weather } from './pages/Weather/Weather';
-import { NextDays } from './pages/Forecast/Forecast';
+import { Forecast } from './pages/Forecast/Forecast';
 import { NotFound } from './pages/NotFound/NotFound';
 
 
@@ -26,7 +26,7 @@ function App() {
             <Routes>
               <Route path='/' element={<Home />} />
               <Route path='/weather' element={<Weather />} />
-              <Route path='/nextdays' element={<NextDays />} />
+              <Route path='/forecast' element={<Forecast />} />
               <Route path='*' element={<NotFound />} />
             </Routes>
 
