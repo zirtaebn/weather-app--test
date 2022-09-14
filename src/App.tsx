@@ -5,7 +5,7 @@ import { Footer } from './components/Footer/Footer';
 
 import { Home } from './pages/Home/Home';
 import { Weather } from './pages/Weather/Weather';
-import { NextDays } from './pages/NextDays/NextDays';
+import { NextDays } from './pages/Forecast/Forecast';
 import { NotFound } from './pages/NotFound/NotFound';
 
 

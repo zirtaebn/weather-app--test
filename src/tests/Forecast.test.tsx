@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import { NextDaysData } from '../components/NextDaysData/NextDaysData';
+import { ForecastData } from '../components/ForecastData/ForecastData';
 
 
 it('it should have a "next-days-data" div', () => {
@@ -8,7 +8,7 @@ it('it should have a "next-days-data" div', () => {
     const { container } = render (
 
         <MemoryRouter>
-            <NextDaysData />
+            <ForecastData />
         </MemoryRouter>
     );
 
@@ -20,7 +20,7 @@ it('it should not have a "next-days-data-row" without data', () => {
     const { container } = render (
 
         <MemoryRouter>
-            <NextDaysData />
+            <ForecastData />
         </MemoryRouter>
     );
 

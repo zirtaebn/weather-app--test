@@ -1,5 +1,5 @@
 import { Arrow } from '../../components/Arrow/Arrow';
-import { NextDaysData } from '../../components/NextDaysData/NextDaysData';
+import { ForecastData } from '../../components/ForecastData/ForecastData';
 import { Link } from 'react-router-dom';
 
 export const NextDays = () => {
@@ -8,7 +8,7 @@ export const NextDays = () => {
 
         <div>
             <Link to='/weather'><Arrow /></Link>
-            <NextDaysData />
+            <ForecastData />
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import './NextDaysData.css';
+import './ForecastData.css';
 
 import { OPEN_WEATHER_BASE_URL } from '../../utils/openWeatherBaseURL';
 import { Context } from '../../contexts/Context';
@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';  
 import { useQuery } from 'react-query';
 
-export const NextDaysData = () => {
+export const ForecastData = () => {
 
     const { state } = useContext(Context);
     const [ cityName, setCityName ] = useState('');
