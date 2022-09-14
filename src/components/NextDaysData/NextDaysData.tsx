@@ -12,7 +12,7 @@ import axios from 'axios';
 export const NextDaysData = () => {
 
     const { state } = useContext(Context);
-    const [ data, setData ] = useState<weatherDataType[] | undefined>();
+    const [ weatherData, setWeatherData ] = useState<weatherDataType[] | undefined>();
     const [ cityName, setCityName ] = useState('');
     const [ isLoading, setIsloading ] = useState(false);
     const navigate = useNavigate();
@@ -43,7 +43,7 @@ export const NextDaysData = () => {
                 
                 setIsloading(true);
                 setCityName(response.data.city.name);
-                setData(list);
+                setWeatherData(list);
                 setIsloading(false);
             })
             .catch(err => {
@@ -59,30 +59,35 @@ export const NextDaysData = () => {
 
     return (
         <div className='next-days-data'>
-            { data && 
+            { weatherData && 
                 <>
                     <h1>{cityName.toUpperCase()}</h1>
-                    <h2>{nextDaysDataMessage}</h2>   
-                    { data.map((item, index) => (
+                    <h2>{nextDaysDataMessage}</h2>
+
+                    { weatherData.map((day, index) => (
                 
                         <div className='next-days-data-row' key={index}>
                             <div className='day'>
                                 {
-                                    new Date(item.dt_txt).toLocaleDateString(
-
-                                        `${state.language.name}`, { day:'numeric', month:'short', weekday:'short'}
-                                    )
+                                    new Date(day.dt_txt)
+                                    .toLocaleDateString(`${state.language.name}`, { day:'numeric', month:'short', weekday:'short'})
                                 }
                             </div>
-                            <img src={`https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`} alt='open weather icon' />
-                            <p>{item.main.temp_max.toFixed(0)}°</p>
+                            <img src={`https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`} alt='open weather icon' />
+                            <p>{day.main.temp_max.toFixed(0)}°</p>
                             <div className='temp-line'></div>
-                            <p>{item.main.temp_min.toFixed(0)}°</p>
-                            <span>{item.weather[0].description}</span>
+                            <p>{day.main.temp_min.toFixed(0)}°</p>
+                            <span>{day.weather[0].description}</span>
                         </div>
                 
                     ))}
                 </>
+            }
+
+            { !isLoading && !weatherData &&
+
+                <h1>...</h1>
+
             }
 
             { isLoading &&
