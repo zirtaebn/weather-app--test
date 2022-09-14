@@ -18,13 +18,16 @@ export const WeatherData = () => {
     const URL = OPEN_WEATHER_BASE_URL('weather');
     const navigate = useNavigate();
 
-    const { data, isLoading, isError } = useQuery<weatherDataType | undefined>(['weather', state], 
+    const { data, isLoading, isError, error } = useQuery<weatherDataType | undefined>(['weather', state], 
 
         async () => {
 
-            const response = await axios.get(URL)
+            const response = await axios.get(URL);
 
             return response.data
+        },
+        {
+            refetchOnWindowFocus: false
         }
     )
       
@@ -45,6 +48,8 @@ export const WeatherData = () => {
 
     if(isError) {
 
+        console.log(error, 'teste');
+        
         return (
             <>
                 <h1>{errorMessage}</h1>
