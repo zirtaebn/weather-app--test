@@ -3,7 +3,7 @@ import './ForecastData.css';
 import { OPEN_WEATHER_BASE_URL } from '../../utils/openWeatherBaseURL';
 import { Context } from '../../contexts/Context';
 import { weatherDataType } from '../../types/weatherDataType';
-import { useLanguageString } from '../../utils/useLanguageString';
+import { useLanguageString } from '../../hooks/useLanguageString';
 
 import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';

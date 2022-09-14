@@ -1,7 +1,7 @@
 import './Geolocation.css';
 
 import { Context } from "../../contexts/Context";
-import { useLanguageString } from '../../utils/useLanguageString';
+import { useLanguageString } from '../../hooks/useLanguageString';
 
 import { useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";

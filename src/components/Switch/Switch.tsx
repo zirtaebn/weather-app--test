@@ -1,7 +1,7 @@
 import './Switch.css';
 
 import { Context } from '../../contexts/Context';
-import { usePersistedData } from '../../utils/usePersistedData';
+import { usePersistedData } from '../../hooks/usePersistedData';
 
 import { useContext, useEffect } from 'react';
 

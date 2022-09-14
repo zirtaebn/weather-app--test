@@ -1,7 +1,7 @@
 import './WeatherData.css';
 
 import { OPEN_WEATHER_BASE_URL } from '../../utils/openWeatherBaseURL';
-import { useLanguageString } from '../../utils/useLanguageString';
+import { useLanguageString } from '../../hooks/useLanguageString';
 import { Context } from '../../contexts/Context';
 import { weatherDataType } from '../../types/weatherDataType';
 

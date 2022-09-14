@@ -1,6 +1,6 @@
 import './NotFound.css';
 
-import { useLanguageString } from '../../utils/useLanguageString';
+import { useLanguageString } from '../../hooks/useLanguageString';
 
 export const NotFound = () => {
 

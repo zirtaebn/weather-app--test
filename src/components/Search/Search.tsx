@@ -1,7 +1,7 @@
 import './Search.css';
 
 import { Context } from '../../contexts/Context';
-import { useLanguageString } from '../../utils/useLanguageString';
+import { useLanguageString } from '../../hooks/useLanguageString';
 
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
