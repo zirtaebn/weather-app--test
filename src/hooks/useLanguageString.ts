@@ -5,6 +5,7 @@ import { languageStringType } from '../types/languageStringType';
 export const useLanguageString = () => {
 
     const { state } = useContext(Context);
+    
     const languageString:languageStringType = {
 
         footerMessage: '',

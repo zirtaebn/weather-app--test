@@ -80,7 +80,7 @@ export const WeatherData = () => {
                     <span>MIN:</span> <p>{data?.main.temp_min.toFixed(0)}°</p>
                 </div>
     
-                <Link className='link' to='/nextdays'>{ weatherDataMessage }</Link>
+                <Link className='link' to='/forecast'>{ weatherDataMessage }</Link>
                        
             </>
 
