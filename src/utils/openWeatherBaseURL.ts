@@ -1,6 +1,6 @@
-import { useContext } from 'react';
 import { Context } from '../contexts/Context';
 
+import { useContext } from 'react';
 
 export const OPEN_WEATHER_BASE_URL = (parameter: string) => {
 

@@ -2,9 +2,9 @@ import './Footer.css';
 
 import { Context } from '../../contexts/Context';
 import { usePersistedData } from '../../hooks/usePersistedData';
+import { useLanguageString } from '../../hooks/useLanguageString';
 
 import { useContext, useEffect } from 'react';
-import { useLanguageString } from '../../hooks/useLanguageString';
 
 export const Footer = () => {
 

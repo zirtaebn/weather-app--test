@@ -2,13 +2,10 @@ import './App.css';
 
 import { Switch } from './components/Switch/Switch';
 import { Footer } from './components/Footer/Footer';
-
 import { Home } from './pages/Home/Home';
 import { Weather } from './pages/Weather/Weather';
 import { Forecast } from './pages/Forecast/Forecast';
 import { NotFound } from './pages/NotFound/NotFound';
-
-
 import { ContextProvider } from './contexts/Context'
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';

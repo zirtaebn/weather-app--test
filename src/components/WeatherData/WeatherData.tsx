@@ -3,10 +3,10 @@ import './WeatherData.css';
 import { useLanguageString } from '../../hooks/useLanguageString';
 import { Context } from '../../contexts/Context';
 import { useFetch } from '../../hooks/useFetch';
+import { weatherDataType } from '../../types/weatherDataType';
 
 import { Link, useNavigate } from 'react-router-dom';
 import { useContext, useEffect } from 'react';
-import { weatherDataType } from '../../types/weatherDataType';
 
 export const WeatherData = () => {
 
@@ -39,7 +39,6 @@ export const WeatherData = () => {
             </>
         )
     }
-
    
     return(
 

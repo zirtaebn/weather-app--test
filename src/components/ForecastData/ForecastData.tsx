@@ -1,13 +1,14 @@
 import './ForecastData.css';
 
 import { Context } from '../../contexts/Context';
-import { forecastDataType } from '../../types/forecastDataType';
 import { useLanguageString } from '../../hooks/useLanguageString';
+import { useFetch } from '../../hooks/useFetch';
+import { weatherDataType } from '../../types/weatherDataType';
+import { forecastDataType } from '../../types/forecastDataType';
 
 import { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useFetch } from '../../hooks/useFetch';
-import { weatherDataType } from '../../types/weatherDataType';
+
 
 export const ForecastData = () => {
 
