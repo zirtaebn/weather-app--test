@@ -17,7 +17,7 @@ export const ForecastData = () => {
     const [ cityName, setCityName ] = useState('');
     const navigate = useNavigate();
     // const URL = OPEN_WEATHER_BASE_URL('forecast');
-    const { data, isLoading, isError } = useFetch('forecast');
+    const [ data, isLoading, isError ] = useFetch<weatherDataType[]>('forecast');
     let { nextDaysDataMessage, errorMessage, subErrorMessage} = useLanguageString(); 
 
     // const { data, isLoading, isError } = useQuery<weatherDataType[] | undefined>(['forecast', state], 
