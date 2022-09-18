@@ -4,6 +4,7 @@ import { OPEN_WEATHER_BASE_URL } from '../../utils/openWeatherBaseURL';
 import { useLanguageString } from '../../hooks/useLanguageString';
 import { Context } from '../../contexts/Context';
 import { weatherDataType } from '../../types/weatherDataType';
+import { useFetch } from '../../hooks/useFetch';
 
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
@@ -11,26 +12,14 @@ import { useContext, useEffect } from 'react';
 import { useQuery } from 'react-query';
 
 
+
 export const WeatherData = () => {
 
     const { state } = useContext(Context);
     const { weatherDataMessage, errorMessage, subErrorMessage } = useLanguageString();
-    // const URL = OPEN_WEATHER_BASE_URL('weather');
+    const { data, isLoading, isError } = useFetch('weather');
     const navigate = useNavigate();
-
-    // const { data, isLoading, isError } = useQuery<weatherDataType | undefined>(['weather', state], 
-
-    //     async () => {
-
-    //         const { data } = await axios.get(URL);
-
-    //         return data
-    //     },
-    //     {
-    //         refetchOnWindowFocus: false
-    //     }
-    // )
-      
+   
     useEffect(() => {
 
         if(!state.adress.lat && !state.adress.lng) {
