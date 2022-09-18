@@ -1,9 +1,6 @@
 export type weatherDataType = {
 
     name?:string,
-    city?:{ 
-        name:string 
-    }
     dt_txt:string,
     weather: [
         {

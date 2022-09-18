@@ -1,10 +1,9 @@
-import axios from "axios";
-import { useContext } from "react";
-import { useQuery } from "react-query";
-
 import { Context } from "../contexts/Context";
 import { OPEN_WEATHER_BASE_URL } from "../utils/openWeatherBaseURL";
 
+import axios from "axios";
+import { useContext } from "react";
+import { useQuery } from "react-query";
 
 export const useFetch = <T>(queryKey:string):[ T | undefined, boolean, boolean] => {
 

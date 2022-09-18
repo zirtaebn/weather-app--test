@@ -1,7 +1,9 @@
-import { weatherDataType } from "./weatherDataType"
+import { weatherDataType } from './weatherDataType';
 
 export type weatherDataArrayType = {
 
-    city: {name:string},
+    city: {
+        name:string
+    },
     list: weatherDataType[]
 }

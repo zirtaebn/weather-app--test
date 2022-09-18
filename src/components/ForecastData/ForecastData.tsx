@@ -1,48 +1,28 @@
 import './ForecastData.css';
 
-import { OPEN_WEATHER_BASE_URL } from '../../utils/openWeatherBaseURL';
 import { Context } from '../../contexts/Context';
-import { weatherDataType } from '../../types/weatherDataType';
+import { weatherDataArrayType } from '../../types/weatherDataArrayType';
 import { useLanguageString } from '../../hooks/useLanguageString';
 
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';  
-import { useQuery } from 'react-query';
 import { useFetch } from '../../hooks/useFetch';
+import { weatherDataType } from '../../types/weatherDataType';
 
 export const ForecastData = () => {
 
     const { state } = useContext(Context);
-    const [ cityName, setCityName ] = useState('');
     const navigate = useNavigate();
-    // const URL = OPEN_WEATHER_BASE_URL('forecast');
-    const [ data, isLoading, isError ] = useFetch<weatherDataType[]>('forecast');
+    const [ response, isLoading, isError ] = useFetch<weatherDataArrayType>('forecast');
     let { nextDaysDataMessage, errorMessage, subErrorMessage} = useLanguageString(); 
 
-    // const { data, isLoading, isError } = useQuery<weatherDataType[] | undefined>(['forecast', state], 
+    const data = response?.list.filter((item:weatherDataType) => {
+        const date = new Date(new Date().setHours(18)).getHours();
 
-    //     async () => {
-
-    //         const { data } = await axios.get(URL);
-    //         const date = new Date(new Date().setHours(18)).getHours();
-
-    //         setCityName(data.city.name);
-
-    //         const list = data.list.filter((item:any) => {
-
-    //             const weatherDate = new Date(item.dt_txt).getHours();    
-
-    //             return weatherDate === date
-    //         }) 
-
-    //         return list
-    //     },
-    //     {
-    //         refetchOnWindowFocus: false
-    //     } 
-    // )
+        const weatherDate = new Date(item.dt_txt).getHours();    
     
+        return weatherDate === date
+    }) 
    
     useEffect(() => {
 
@@ -67,11 +47,12 @@ export const ForecastData = () => {
             </>
         )
     }
+    
 
     return (
         <div className='next-days-data'>
             <>
-                <h1>{cityName.toUpperCase()}</h1>
+                <h1>{response?.city.name.toUpperCase()}</h1>
                 <h2>{nextDaysDataMessage}</h2>
 
                 { data?.map((day, index) => (
