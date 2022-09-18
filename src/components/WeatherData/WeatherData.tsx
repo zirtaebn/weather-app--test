@@ -15,21 +15,21 @@ export const WeatherData = () => {
 
     const { state } = useContext(Context);
     const { weatherDataMessage, errorMessage, subErrorMessage } = useLanguageString();
-    const URL = OPEN_WEATHER_BASE_URL('weather');
+    // const URL = OPEN_WEATHER_BASE_URL('weather');
     const navigate = useNavigate();
 
-    const { data, isLoading, isError, error } = useQuery<weatherDataType | undefined>(['weather', state], 
+    // const { data, isLoading, isError } = useQuery<weatherDataType | undefined>(['weather', state], 
 
-        async () => {
+    //     async () => {
 
-            const { data } = await axios.get(URL);
+    //         const { data } = await axios.get(URL);
 
-            return data
-        },
-        {
-            refetchOnWindowFocus: false
-        }
-    )
+    //         return data
+    //     },
+    //     {
+    //         refetchOnWindowFocus: false
+    //     }
+    // )
       
     useEffect(() => {
 
@@ -48,8 +48,6 @@ export const WeatherData = () => {
 
     if(isError) {
 
-        console.log(error, 'teste');
-        
         return (
             <>
                 <h1>{errorMessage}</h1>
