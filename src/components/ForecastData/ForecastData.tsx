@@ -18,16 +18,16 @@ export const ForecastData = () => {
     const URL = OPEN_WEATHER_BASE_URL('forecast');
     let { nextDaysDataMessage, errorMessage, subErrorMessage} = useLanguageString(); 
 
-    const { data, isLoading, isError, error } = useQuery<weatherDataType[] | undefined>(['forecast', state], 
+    const { data, isLoading, isError } = useQuery<weatherDataType[] | undefined>(['forecast', state], 
 
         async () => {
 
-            const response = await axios.get(URL);
+            const { data } = await axios.get(URL);
             const date = new Date(new Date().setHours(18)).getHours();
 
-            setCityName(response.data.city.name);
+            setCityName(data.city.name);
 
-            const list = response.data.list.filter((item:any) => {
+            const list = data.list.filter((item:any) => {
 
                 const weatherDate = new Date(item.dt_txt).getHours();    
 
@@ -57,8 +57,6 @@ export const ForecastData = () => {
     }
 
     if(isError) {
-
-        console.log(error, 'teste');
         
         return (
             <>

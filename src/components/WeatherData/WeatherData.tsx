@@ -22,9 +22,9 @@ export const WeatherData = () => {
 
         async () => {
 
-            const response = await axios.get(URL);
+            const { data } = await axios.get(URL);
 
-            return response.data
+            return data
         },
         {
             refetchOnWindowFocus: false
