@@ -9,37 +9,39 @@ import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';  
 import { useQuery } from 'react-query';
+import { useFetch } from '../../hooks/useFetch';
 
 export const ForecastData = () => {
 
     const { state } = useContext(Context);
     const [ cityName, setCityName ] = useState('');
     const navigate = useNavigate();
-    const URL = OPEN_WEATHER_BASE_URL('forecast');
+    // const URL = OPEN_WEATHER_BASE_URL('forecast');
+    const { data, isLoading, isError } = useFetch('forecast');
     let { nextDaysDataMessage, errorMessage, subErrorMessage} = useLanguageString(); 
 
-    const { data, isLoading, isError } = useQuery<weatherDataType[] | undefined>(['forecast', state], 
+    // const { data, isLoading, isError } = useQuery<weatherDataType[] | undefined>(['forecast', state], 
 
-        async () => {
+    //     async () => {
 
-            const { data } = await axios.get(URL);
-            const date = new Date(new Date().setHours(18)).getHours();
+    //         const { data } = await axios.get(URL);
+    //         const date = new Date(new Date().setHours(18)).getHours();
 
-            setCityName(data.city.name);
+    //         setCityName(data.city.name);
 
-            const list = data.list.filter((item:any) => {
+    //         const list = data.list.filter((item:any) => {
 
-                const weatherDate = new Date(item.dt_txt).getHours();    
+    //             const weatherDate = new Date(item.dt_txt).getHours();    
 
-                return weatherDate === date
-            }) 
+    //             return weatherDate === date
+    //         }) 
 
-            return list
-        },
-        {
-            refetchOnWindowFocus: false
-        } 
-    )
+    //         return list
+    //     },
+    //     {
+    //         refetchOnWindowFocus: false
+    //     } 
+    // )
     
    
     useEffect(() => {
