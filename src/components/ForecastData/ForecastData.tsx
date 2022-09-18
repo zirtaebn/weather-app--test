@@ -1,7 +1,7 @@
 import './ForecastData.css';
 
 import { Context } from '../../contexts/Context';
-import { weatherDataArrayType } from '../../types/weatherDataArrayType';
+import { forecastDataType } from '../../types/forecastDataType';
 import { useLanguageString } from '../../hooks/useLanguageString';
 
 import { useContext, useEffect } from 'react';
@@ -13,7 +13,7 @@ export const ForecastData = () => {
 
     const { state } = useContext(Context);
     const navigate = useNavigate();
-    const [ response, isLoading, isError ] = useFetch<weatherDataArrayType>('forecast');
+    const [ response, isLoading, isError ] = useFetch<forecastDataType>('forecast');
     let { nextDaysDataMessage, errorMessage, subErrorMessage} = useLanguageString(); 
 
     const data = response?.list.filter((item:weatherDataType) => {
