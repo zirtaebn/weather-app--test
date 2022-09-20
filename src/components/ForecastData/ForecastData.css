@@ -21,7 +21,7 @@
     line-height: 24px;
     text-align: center;
     margin-top: 0;
-    margin-bottom: 60px;
+    margin-bottom: 5%;
 }
 
 .next-days-data-row {
@@ -81,6 +81,13 @@
 }
 
 @media(max-width:768px) {
+
+    .next-days-data h1 {
+
+        font-size: 43px;
+        line-height: 40px;
+        letter-spacing: 0.05em;
+    }
 
     .next-days-data  h2 {
 
