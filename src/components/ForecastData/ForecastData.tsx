@@ -60,8 +60,12 @@ export const ForecastData = () => {
                     <div className='next-days-data-row' key={index}>
                         <div className='day'>
                             {
-                                new Date(day.dt_txt)
-                                .toLocaleDateString(`${state.language.name}`, { day:'numeric', month:'short', weekday:'short'})
+                                new Date(day.dt_txt).toLocaleDateString(
+                                    
+                                    `${state.language.name}`
+                                    , 
+                                    { day:'numeric', month:'short', weekday:'short'}
+                                )
                             }
                         </div>
 
