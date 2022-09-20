@@ -9,13 +9,12 @@ import { forecastDataType } from '../../types/forecastDataType';
 import { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-
 export const ForecastData = () => {
 
     const { state } = useContext(Context);
     const navigate = useNavigate();
     const [ response, isLoading, isError ] = useFetch<forecastDataType>('forecast');
-    let { nextDaysDataMessage, errorMessage, subErrorMessage} = useLanguageString(); 
+    let { forecastDataMessage, errorMessage, subErrorMessage } = useLanguageString(); 
 
     const data = response?.list.filter((item:weatherDataType) => {
         const date = new Date(new Date().setHours(18)).getHours();
@@ -54,7 +53,7 @@ export const ForecastData = () => {
         <div className='next-days-data'>
             <>
                 <h1>{response?.city.name.toUpperCase()}</h1>
-                <h2>{nextDaysDataMessage}</h2>
+                <h2>{forecastDataMessage}</h2>
 
                 { data?.map((day, index) => (
                 

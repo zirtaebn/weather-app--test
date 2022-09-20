@@ -14,7 +14,7 @@ export const WeatherData = () => {
     const { weatherDataMessage, errorMessage, subErrorMessage } = useLanguageString();
     const [ data, isLoading, isError ] = useFetch<weatherDataType>('weather');
     const navigate = useNavigate();
-   
+
     useEffect(() => {
 
         if(!state.adress.lat && !state.adress.lng) {
@@ -39,6 +39,7 @@ export const WeatherData = () => {
             </>
         )
     }
+    
    
     return(
 

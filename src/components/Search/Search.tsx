@@ -21,7 +21,7 @@ export const Search = () => {
             <Autocomplete
                 apiKey={process.env.REACT_APP_GOOGLE_API_KEY}
                 onPlaceSelected={(place) => {
-
+                    
                     dispatch({
 
                         type: 'CHANGE_ADRESS',
