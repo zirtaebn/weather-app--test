@@ -1,225 +1,112 @@
-<!-- About the Project -->
-## :star2: About the Project
-
+## Sobre o projeto
 
 <div align="center"> 
-  <img src="https://placehold.co/600x400?text=Your+Screenshot+here" alt="screenshot" />
+  <img src="./public/screenshots/desktop.png" alt="screenshot" />
 </div>
+<br/>
 
-
-<!-- TechStack -->
-### :space_invader: Tech Stack
-
+### Stacks
 <details>
   <summary>Client</summary>
   <ul>
-    <li><a href="https://www.typescriptlang.org/">Typescript</a></li>
-    <li><a href="https://nextjs.org/">Next.js</a></li>
     <li><a href="https://reactjs.org/">React.js</a></li>
-    <li><a href="https://tailwindcss.com/">TailwindCSS</a></li>
-  </ul>
-</details>
-
-<details>
-  <summary>Server</summary>
-  <ul>
     <li><a href="https://www.typescriptlang.org/">Typescript</a></li>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
-    <li><a href="https://go.dev/">Golang</a></li>
-    <li><a href="https://nestjs.com/">Nest.js</a></li>
-    <li><a href="https://socket.io/">SocketIO</a></li>
-    <li><a href="https://www.prisma.io/">Prisma</a></li>    
-    <li><a href="https://www.apollographql.com/">Apollo</a></li>
-    <li><a href="https://graphql.org/">GraphQL</a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></li>
   </ul>
 </details>
+<br/>
 
-<details>
-<summary>Database</summary>
-  <ul>
-    <li><a href="https://www.mysql.com/">MySQL</a></li>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
-    <li><a href="https://redis.io/">Redis</a></li>
-    <li><a href="https://neo4j.com/">Neo4j</a></li>
-    <li><a href="https://www.mongodb.com/">MongoDB</a></li>
-  </ul>
-</details>
+### Features
 
-<details>
-<summary>DevOps</summary>
-  <ul>
-    <li><a href="https://www.docker.com/">Docker</a></li>
-    <li><a href="https://www.jenkins.io/">Jenkins</a></li>
-    <li><a href="https://circleci.com/">CircleCLI</a></li>
-  </ul>
-</details>
-
-<!-- Features -->
-### :dart: Features
-
-- Feature 1
-- Feature 2
-- Feature 3
-
-<!-- Color Reference -->
-### :art: Color Reference
-
-| Color             | Hex                                                                |
-| ----------------- | ------------------------------------------------------------------ |
-| Primary Color | ![#222831](https://via.placeholder.com/10/222831?text=+) #222831 |
-| Secondary Color | ![#393E46](https://via.placeholder.com/10/393E46?text=+) #393E46 |
-| Accent Color | ![#00ADB5](https://via.placeholder.com/10/00ADB5?text=+) #00ADB5 |
-| Text Color | ![#EEEEEE](https://via.placeholder.com/10/EEEEEE?text=+) #EEEEEE |
+- Internacionalização para inglês/espanhol
+- Busca do clima através de geolocalização
+- Trata escolha de escala de grau: Celsius ou Fahrenheit.
+- Previsão do tempo para os próximos 5 dias.
+<br/>
 
 
-<!-- Env Variables -->
-### :key: Environment Variables
+### Variáveis de ambiente
 
-To run this project, you will need to add the following environment variables to your .env file
+Para rodar esse projeto, você precisará adicionar as seguintes variaveis de ambiente em um arquivo .env
 
-`API_KEY`
+`REACT_APP_GOOGLE_API_KEY`
 
-`ANOTHER_API_KEY`
+`REACT_APP_WEATHER_API_KEY`
+</br>
 
-<!-- Getting Started -->
-## 	:toolbox: Getting Started
+## Começando
 
-<!-- Prerequisites -->
-### :bangbang: Prerequisites
+### Pré-requisitos
 
-This project uses Yarn as package manager
-
-```bash
- npm install --global yarn
-```
-
-<!-- Installation -->
-### :gear: Installation
-
-Install my-project with npm
-
-```bash
-  yarn install my-project
-  cd my-project
-```
+Este projeto utiliza o npm como package manager
    
-<!-- Running Tests -->
-### :test_tube: Running Tests
 
-To run tests, run the following command
+### Rodando testes
 
-```bash
-  yarn test test
-```
-
-<!-- Run Locally -->
-### :running: Run Locally
-
-Clone the project
+Para rodar testes, rode o seguinte comando
 
 ```bash
-  git clone https://github.com/Louis3797/awesome-readme-template.git
+  npm run test
 ```
 
-Go to the project directory
+### Rodar localmanente
+
+Clone o projeto
 
 ```bash
-  cd my-project
+  git clone https://github.com/zirtaebn/weather-app--test.git
 ```
 
-Install dependencies
+Vá para o diretório do projeto
 
 ```bash
-  yarn install
+  cd weather-app--test
 ```
 
-Start the server
+Instale as dependências
 
 ```bash
-  yarn start
+  npm install
 ```
 
-
-<!-- Deployment -->
-### :triangular_flag_on_post: Deployment
-
-To deploy this project run
+Comece o servidor 
 
 ```bash
-  yarn deploy
+  npm start
 ```
 
+## Uso
 
-<!-- Usage -->
-## :eyes: Usage
+Pesquise o nome da cidade e selecione o autocomplete
+<img src="./public/screenshots/desktop2.png" alt="screenshot" />
+<img src="./public/screenshots/desktop3.png" alt="screenshot" />
 
-Use this space to tell a little more about your project and how it can be used. Show additional screenshots, code samples, demos or link to other resources.
-
-
-```javascript
-import Component from 'my-project'
-
-function App() {
-  return <Component />
-}
-```
-
-<!-- Roadmap -->
-## :compass: Roadmap
-
-* [x] Todo 1
-* [ ] Todo 2
+Clique no link para ver a temperatura dos próximos dias
+<img src="./public/screenshots/desktop4.png" alt="screenshot" />
 
 
-<!-- Contributing -->
-## :wave: Contributing
+## Contribuição
 
-<a href="https://github.com/Louis3797/awesome-readme-template/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Louis3797/awesome-readme-template" />
+<a href="https://github.com/zirtaebn/weather-app--test/graphs/contributors">
+  <img src="https://avatars.githubusercontent.com/u/80608809?s=60&v=4" />
 </a>
+</br>
+Contribuições são sempre bem vindas!
+</br>
+</br>
+
+## Contato
+
+Beatriz Sant'Anna - [@zirtaebn](https://twitter.com/zirtaebn) - zirtaebndev@gmail.com
+
+Link do projeto: [https://github.com/zirtaebn/weather-app--test](https://github.com/zirtaebn/weather-app--test)
 
 
-Contributions are always welcome!
+## Reconhecimentos
 
-See `contributing.md` for ways to get started.
-
-
-<!-- Code of Conduct -->
-### :scroll: Code of Conduct
-
-Please read the [Code of Conduct](https://github.com/Louis3797/awesome-readme-template/blob/master/CODE_OF_CONDUCT.md)
-
-<!-- FAQ -->
-## :grey_question: FAQ
-
-- Question 1
-
-  + Answer 1
-
-- Question 2
-
-  + Answer 2
-
-
-<!-- License -->
-## :warning: License
-
-Distributed under the no License. See LICENSE.txt for more information.
-
-
-<!-- Contact -->
-## :handshake: Contact
-
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
-
-Project Link: [https://github.com/Louis3797/awesome-readme-template](https://github.com/Louis3797/awesome-readme-template)
-
-
-<!-- Acknowledgments -->
-## :gem: Acknowledgements
-
-Use this section to mention useful resources and libraries that you have used in your projects.
-
- - [Shields.io](https://shields.io/)
- - [Awesome README](https://github.com/matiassingers/awesome-readme)
- - [Emoji Cheat Sheet](https://github.com/ikatyang/emoji-cheat-sheet/blob/mast
+Recursos e bibliotecas úteis que utilizei no projeto.
+ - [Open Weather API](https://openweathermap.org/api)
+ - [Axios](https://axios-http.com/ptbr/)
+ - [React Router](https://reactrouter.com/en/main)
+ - [React Query](https://react-query-v3.tanstack.com/)
+ - [React Google AutoComplete](https://www.npmjs.com/package/react-google-autocomplete)
