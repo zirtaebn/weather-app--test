@@ -17,10 +17,11 @@
 
 ### Features
 
-- Internacionalização para inglês/espanhol
-- Busca do clima através de geolocalização
-- Trata escolha de escala de grau: Celsius ou Fahrenheit.
-- Previsão do tempo para os próximos 5 dias.
+- Internacionalização para inglês/espanhol;
+- Busca do clima através de geolocalização;
+- Trata escolha de escala de grau: Celsius ou Fahrenheit;
+- Previsão do tempo para os próximos 5 dias;
+- Layout responsivo;
 
 ### Variáveis de ambiente
 
