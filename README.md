@@ -1,7 +1,12 @@
 ## Sobre o projeto
-
+Aplicação feita em um desafio técnico de um processo seletivo para vaga Frontend, onde a ideia era fazer um projeto que identificasse o clima da cidade pesquisada através do [Open Wheater](https://openweathermap.org/api)
 <div align="center"> 
+    Desktop
   <img src="./public/screenshots/desktop.png" alt="screenshot" />
+</div>
+<div align="center"> 
+    Mobile
+  <img src="./public/screenshots/mobile.png" alt="screenshot" />
 </div>
 <br/>
 
@@ -73,12 +78,31 @@ Comece o servidor
 
 ## Uso
 
-Pesquise o nome da cidade e selecione o autocomplete
-<img src="./public/screenshots/desktop2.png" alt="screenshot" />
-<img src="./public/screenshots/desktop3.png" alt="screenshot" />
+### Pesquise o nome da cidade e selecione o autocomplete
+<div align="center">
+    Desktop
+    <img src="./public/screenshots/desktop2.png" alt="screenshot" />
+    <img src="./public/screenshots/desktop3.png" alt="screenshot" />
+</div>
+
+<div  align="center">
+    Mobile
+    <img src="./public/screenshots/mobile2.png" alt="screenshot" />
+    <img src="./public/screenshots/mobile3.png" alt="screenshot" />
+</div>
+
 
 Clique no link para ver a temperatura dos próximos dias
-<img src="./public/screenshots/desktop4.png" alt="screenshot" />
+<div  align="center">
+    Desktop
+    <img src="./public/screenshots/desktop4.png" alt="screenshot" />
+</div>
+<div  align="center">
+    Mobile
+    <img src="./public/screenshots/mobile4.png" alt="screenshot" />
+</div>
+
+
 
 
 ## Contribuição
