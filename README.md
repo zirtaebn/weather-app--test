@@ -14,7 +14,6 @@
     <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></li>
   </ul>
 </details>
-<br/>
 
 ### Features
 
@@ -22,8 +21,6 @@
 - Busca do clima através de geolocalização
 - Trata escolha de escala de grau: Celsius ou Fahrenheit.
 - Previsão do tempo para os próximos 5 dias.
-<br/>
-
 
 ### Variáveis de ambiente
 
@@ -32,7 +29,6 @@ Para rodar esse projeto, você precisará adicionar as seguintes variaveis de am
 `REACT_APP_GOOGLE_API_KEY`
 
 `REACT_APP_WEATHER_API_KEY`
-</br>
 
 ## Começando
 
@@ -40,7 +36,6 @@ Para rodar esse projeto, você precisará adicionar as seguintes variaveis de am
 
 Este projeto utiliza o npm como package manager
    
-
 ### Rodando testes
 
 Para rodar testes, rode o seguinte comando
@@ -92,8 +87,6 @@ Clique no link para ver a temperatura dos próximos dias
 </a>
 </br>
 Contribuições são sempre bem vindas!
-</br>
-</br>
 
 ## Contato
 
