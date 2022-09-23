@@ -5,7 +5,7 @@ Aplicação feita em um desafio técnico de um processo seletivo para vaga Front
   <img src="./public/screenshots/desktop.png" alt="screenshot" />
 </div>
 <div align="center"> 
-    Mobile
+    <p>Mobile</p>
   <img src="./public/screenshots/mobile.png" alt="screenshot" />
 </div>
 <br/>
@@ -86,7 +86,7 @@ Comece o servidor
 </div>
 
 <div  align="center">
-    Mobile
+    <p>Mobile</p>
     <img src="./public/screenshots/mobile2.png" alt="screenshot" />
     <img src="./public/screenshots/mobile3.png" alt="screenshot" />
 </div>
@@ -98,7 +98,7 @@ Clique no link para ver a temperatura dos próximos dias
     <img src="./public/screenshots/desktop4.png" alt="screenshot" />
 </div>
 <div  align="center">
-    Mobile
+    <p>Mobile</p>
     <img src="./public/screenshots/mobile4.png" alt="screenshot" />
 </div>
 
