@@ -42,9 +42,9 @@ Para rodar esse projeto, você precisará adicionar as seguintes variaveis de am
 
 Este projeto utiliza o npm como package manager
    
-### Rodando testes
+### Rodar testes
 
-Para rodar testes, rode o seguinte comando
+Para rodar testes, escreva o seguinte comando
 
 ```bash
   npm run test
@@ -88,6 +88,7 @@ Comece o servidor
 <div  align="center">
     <p>Mobile</p>
     <img src="./public/screenshots/mobile2.png" alt="screenshot" />
+    </br>
     <img src="./public/screenshots/mobile3.png" alt="screenshot" />
 </div>
 
