@@ -16,7 +16,7 @@ export const ForecastData = () => {
     const [ response, isLoading, isError ] = useFetch<forecastDataType>('forecast');
     let { forecastDataMessage, errorMessage, subErrorMessage } = useLanguageString(); 
 
-    const data = response?.list.filter((item:weatherDataType) => {
+    const forecastData = response?.list.filter((item:weatherDataType) => {
         const date = new Date(new Date().setHours(18)).getHours();
 
         const weatherDate = new Date(item.dt_txt).getHours();    
@@ -55,7 +55,7 @@ export const ForecastData = () => {
                 <h1>{response?.city.name.toUpperCase()}</h1>
                 <h2>{forecastDataMessage}</h2>
 
-                { data?.map((day, index) => (
+                { forecastData?.map((day, index) => (
                 
                     <div className='next-days-data-row' key={index}>
                         <div className='day'>
