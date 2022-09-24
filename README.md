@@ -40,7 +40,7 @@ Para rodar esse projeto, você precisará adicionar as seguintes variaveis de am
 
 ### Pré-requisitos
 
-Este projeto utiliza o npm como package manager
+Antes de começar, você precisará ter instalado em sua máquina as seguintes ferramentas: [Git](https://git-scm.com/), [Node.js](https://nodejs.org/en/) e [Typescript](https://www.typescriptlang.org/).
    
 ### Rodar testes
 
@@ -70,7 +70,7 @@ Instale as dependências
   npm install
 ```
 
-Comece o servidor 
+Inicie o servidor 
 
 ```bash
   npm start
