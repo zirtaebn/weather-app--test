@@ -13,9 +13,9 @@ export const ForecastData = () => {
 
     const { state } = useContext(Context);
     const navigate = useNavigate();
-    const [ response, isLoading, isError ] = useFetch<forecastDataType>('forecast');
-    const cityName = response ? response.city.name : '';
-    const forecastData = response?.list.filter((item:weatherDataType) => {
+    const [ forecastResponse, isLoading, isError ] = useFetch<forecastDataType>('forecast');
+    const cityName = forecastResponse ? forecastResponse.city.name : '';
+    const forecastData = forecastResponse?.list.filter((item:weatherDataType) => {
         const date = new Date(new Date().setHours(18)).getHours();
 
         const weatherDate = new Date(item.dt_txt).getHours();    
