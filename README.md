@@ -20,7 +20,7 @@ Aplicação feita em um desafio técnico de um processo seletivo para vaga Front
   </ul>
 </details>
 
-### Features
+### Funcionalidades
 
 - Internacionalização para inglês/espanhol;
 - Busca do clima através de geolocalização;
@@ -33,8 +33,10 @@ Aplicação feita em um desafio técnico de um processo seletivo para vaga Front
 Para rodar esse projeto, você precisará adicionar as seguintes variaveis de ambiente em um arquivo .env
 
 `REACT_APP_GOOGLE_API_KEY`
+ - [Usar chaves de API com a API Places](https://developers.google.com/maps/documentation/places/web-service/get-api-key)
 
 `REACT_APP_WEATHER_API_KEY`
+ - [Como chamar Open Weather APIs de graça](https://openweathermap.org/appid#signup)
 
 ## Começando
 
