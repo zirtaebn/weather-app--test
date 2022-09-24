@@ -14,15 +14,15 @@ export const ForecastData = () => {
     const { state } = useContext(Context);
     const navigate = useNavigate();
     const [ response, isLoading, isError ] = useFetch<forecastDataType>('forecast');
-    let { forecastDataMessage, errorMessage, subErrorMessage } = useLanguageString(); 
-
+    const cityName = response ? response.city.name : '';
     const forecastData = response?.list.filter((item:weatherDataType) => {
         const date = new Date(new Date().setHours(18)).getHours();
 
         const weatherDate = new Date(item.dt_txt).getHours();    
     
         return weatherDate === date
-    }) 
+    });
+    let { forecastDataMessage, errorMessage, subErrorMessage } = useLanguageString(); 
    
     useEffect(() => {
 
@@ -52,15 +52,15 @@ export const ForecastData = () => {
     return (
         <div className='next-days-data'>
             <>
-                <h1>{response?.city.name.toUpperCase()}</h1>
+                <h1>{cityName.toUpperCase()}</h1>
                 <h2>{forecastDataMessage}</h2>
 
-                { forecastData?.map((day, index) => (
+                { forecastData?.map((weatherData, index) => (
                 
                     <div className='next-days-data-row' key={index}>
                         <div className='day'>
                             {
-                                new Date(day.dt_txt).toLocaleDateString(
+                                new Date(weatherData.dt_txt).toLocaleDateString(
                                     
                                     `${state.language.name}`
                                     , 
@@ -69,11 +69,11 @@ export const ForecastData = () => {
                             }
                         </div>
 
-                        <img src={`https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`} alt='open weather icon' />
-                        <p>{day.main.temp_max.toFixed(0)}°</p>
+                        <img src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`} alt='open weather icon' />
+                        <p>{weatherData.main.temp_max.toFixed(0)}°</p>
                         <div className='temp-line'></div>
-                        <p>{day.main.temp_min.toFixed(0)}°</p>
-                        <span>{day.weather[0].description}</span>
+                        <p>{weatherData.main.temp_min.toFixed(0)}°</p>
+                        <span>{weatherData.weather[0].description}</span>
                     </div>
                 
                 ))}
