@@ -13,9 +13,9 @@ export const ForecastData = () => {
 
     const { state } = useContext(Context);
     const navigate = useNavigate();
-    const [ forecastResponse, isLoading, isError ] = useFetch<forecastDataType>('forecast');
-    const cityName = forecastResponse ? forecastResponse.city.name : '';
-    const forecastData = forecastResponse?.list.filter((item:weatherDataType) => {
+    const [ forecastData, isLoading, isError ] = useFetch<forecastDataType>('forecast');
+    const cityName = forecastData ? forecastData.city.name : '';
+    const weatherDataList = forecastData?.list.filter((item:weatherDataType) => {
         const date = new Date(new Date().setHours(18)).getHours();
 
         const weatherDate = new Date(item.dt_txt).getHours();    
@@ -55,7 +55,7 @@ export const ForecastData = () => {
                 <h1>{cityName.toUpperCase()}</h1>
                 <h2>{forecastDataMessage}</h2>
 
-                { forecastData?.map((weatherData, index) => (
+                { weatherDataList?.map((weatherData, index) => (
                 
                     <div className='next-days-data-row' key={index}>
                         <div className='day'>
