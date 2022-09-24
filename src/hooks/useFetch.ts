@@ -8,7 +8,7 @@ import { useQuery } from 'react-query';
 export const useFetch = <T>(queryKey:string):[ T | undefined, boolean, boolean] => {
 
     const { state } = useContext(Context);
-    const URL = OPEN_WEATHER_BASE_URL(queryKey);
+    const URL = `https://api.openweathermap.org/data/2.5/${OPEN_WEATHER_BASE_URL}`;
     const { data, isLoading, isError } = useQuery<T>([queryKey, state], 
 
         async () => {
