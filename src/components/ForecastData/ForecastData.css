@@ -126,6 +126,10 @@
 
         display: none;
     }
+    .next-days-data-row p {
+    
+        font-size: 14px;
+    }
 }
 
 @media(max-width:495px) {
