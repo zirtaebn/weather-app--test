@@ -43,29 +43,28 @@ export const WeatherData = () => {
    
     return(
 
-        <div className='weather-data'>
-
-            <>
-                <h1>{weatherData?.name?.toUpperCase()}</h1>
-                <h2>{weatherData?.weather[0].description}</h2>
+        <div className="weather-data">
+             
+            <h1 className="weather-data__title">{weatherData?.name?.toUpperCase()}</h1>
+            <h2 className="weather-data__sub-title">{weatherData?.weather[0].description}</h2>
     
-                <div className='weather-data-row'>
-                    <p>{weatherData?.main.temp?.toFixed(0)}°</p>
-                    <img 
-                        src={`https://openweathermap.org/img/wn/${weatherData?.weather[0].icon}@2x.png`} 
-                        alt='open weather icon' 
-                    />
-                </div>
+            <div className="weather-data__row">
+                <p className="weather-data__main-temp">{weatherData?.main.temp?.toFixed(0)}°</p>
+                <img 
+                    className="weather-data__image"
+                    src={`https://openweathermap.org/img/wn/${weatherData?.weather[0].icon}@2x.png`} 
+                    alt='open weather icon' 
+                />
+            </div>
 
-                <div className='weather-data-temps'>
-                    <span>MAX:</span> <p>{weatherData?.main.temp_max.toFixed(0)}°</p>
-                    <span>MIN:</span> <p>{weatherData?.main.temp_min.toFixed(0)}°</p>
-                </div>
+            <div className="weather-data__row">
+                <span>MAX:</span> 
+                <p className="weather-data__temps">{weatherData?.main.temp_max.toFixed(0)}°</p>
+                <span>MIN:</span>
+                <p className="weather-data__temps">{weatherData?.main.temp_min.toFixed(0)}°</p>
+            </div>
     
-                <Link className='link' to='/forecast'>{ weatherDataMessage }</Link>
-                       
-            </>
-
+            <Link className="weather-data__link" to='/forecast'>{ weatherDataMessage }</Link>
         </div>
     )
 }

@@ -1,12 +1,5 @@
-.weather-data {
+.weather-data__title {
 
-
-
-}
-
-.weather-data h1 {
-
-    
     font-weight: 700;
     font-size: 43px;
     line-height: 52px;
@@ -14,52 +7,43 @@
     letter-spacing: 0.14em;
 }
 
-.weather-data h2 {
+.weather-data__sub-title {
 
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;
     text-align: center;
     margin: 5px 0;
-
 }
 
-.weather-data-row {
+.weather-data__row {
 
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.weather-data-row p {
+.weather-data__main-temp {
 
     font-weight: 400;
     font-size: 64px;
     line-height: 78px;
 }
 
-.weather-data-row img {
+.weather-data__image {
 
     width: 100px;
     height: 100px;
 }
 
-.weather-data-temps {
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.weather-data-temps span {
+.weather-data__row span {
 
     font-weight: 700;
     font-size: 20px;
     line-height: 24px;
 }
 
-.weather-data-temps p {
+.weather-data__temps {
 
     font-weight: 400;
     font-size: 20px;
@@ -67,7 +51,7 @@
     margin: 0 5px;
 }
 
-.link {
+.weather-data__link {
 
     display: flex;
     justify-content: center;
@@ -78,45 +62,41 @@
     line-height: 15px;
     margin-top: 20px;
     padding-bottom: 2px;
-
     text-decoration: underline;
     text-underline-offset: 2.5px;
-
 }
 
 @media(max-width:768px) {
 
-    .weather-data h1 {
+    .weather-data__title {
 
         font-size: 43px;
         line-height: 40px;
         letter-spacing: 0.05em;
     }
-
-
 }
 
 @media(max-width:425px) {
 
-    .weather-data h1 {
+    .weather-data__title {
 
         font-size: 29px;
         line-height: 35px;
     }
 
-    .weather-data h2 {
+    .weather-data__sub-title {
 
         font-size: 14px;
         line-height: 17px;
     }
 
-    .weather-data-row p {
+    .weather-data__main-temp {
 
         font-size: 48px;
         line-height: 59px;
     }
     
-    .weather-data-row img {
+    .weather-data__image {
     
         width: 54px;
         height: 54px;
