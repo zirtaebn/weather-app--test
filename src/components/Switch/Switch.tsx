@@ -36,14 +36,14 @@ export const Switch = () => {
     },[]);
 
     return (
-        <div className='switch-temp'>
-            <div className='temps'>
-                <span>°F</span>
-                <label className='switch' >
-                    <input type='checkbox' checked={state.temp.isToggle} onChange={onToggle}/>
-                    <span className='slider'/>
+        <div className="switch">
+            <div className="switch__temps">
+                <span className="switch__temp">°F</span>
+                <label className="switch__toggler" >
+                    <input className="switch__input" type='checkbox' checked={state.temp.isToggle} onChange={onToggle}/>
+                    <span className="switch__slider"/>
                 </label>
-                <span>°C</span>
+                <span className="switch__temp">°C</span>
             </div>        
         </div>
     )
