@@ -50,33 +50,35 @@ export const ForecastData = () => {
     
 
     return (
-        <div className='next-days-data'>
+        <div className="forecast-data">
             <>
-                <h1>{cityName.toUpperCase()}</h1>
-                <h2>{forecastDataMessage}</h2>
+                <h1 className="forecast-data__title">{cityName.toUpperCase()}</h1>
+                <h2 className="forecast-data__sub-title">{forecastDataMessage}</h2>
 
-                { weatherDataList?.map((weatherData, index) => (
-                
-                    <div className='next-days-data-row' key={index}>
-                        <div className='day'>
-                            {
-                                new Date(weatherData.dt_txt).toLocaleDateString(
-                                    
-                                    `${state.language.name}`
-                                    , 
-                                    { day:'numeric', month:'short', weekday:'short'}
-                                )
-                            }
-                        </div>
+                <ul className="forecast-data__list">
+                    { weatherDataList?.map((weatherData, index) => (
+                    
+                        <li className="forecast-data__item" key={index}>
+                            <div className="forecast-data__date">
+                                {
+                                    new Date(weatherData.dt_txt).toLocaleDateString(
+                                        
+                                        `${state.language.name}`
+                                        , 
+                                        { day:'numeric', month:'short', weekday:'short'}
+                                    )
+                                }
+                            </div>
 
-                        <img src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`} alt='open weather icon' />
-                        <p>{weatherData.main.temp_min.toFixed(0)}°</p>
-                        <div className='temp-line'></div>
-                        <p>{weatherData.main.temp_max.toFixed(0)}°</p>
-                        <span>{weatherData.weather[0].description}</span>
-                    </div>
-                
-                ))}
+                            <img className="forecast-data__image" src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`} alt='open weather icon' />
+                            <p className="forecast-data__temp">{weatherData.main.temp_min.toFixed(0)}°</p>
+                            <span className="forecast-data__temp-line"></span>
+                            <p className="forecast-data__temp">{weatherData.main.temp_max.toFixed(0)}°</p>
+                            <span className="forecast-data__description">{weatherData.weather[0].description}</span>
+                        </li>
+                 
+                    ))}
+                </ul>
             </>
 
         </div>
