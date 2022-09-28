@@ -1,7 +1,5 @@
-.geo {
+.geolocation__link {
 
-
-    
     font-weight: 400;
     font-size: 12px;
     line-height: 15px;
@@ -10,14 +8,11 @@
     text-decoration: underline;
     text-underline-offset: 2.5px;
     cursor: pointer;
-
-
+    text-align: center;
 }
 
-.error {
-
+.geolocation__error {
 
     margin-top: 10px;
     text-align: center;
-
 }

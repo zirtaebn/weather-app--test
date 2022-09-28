@@ -47,23 +47,23 @@ export const Geolocation = () => {
 
     return(
 
-        <>
+        <span className="geolocation">
             { state.adress &&
 
-                <div className='geo' onClick={getGeolocation}>{geolocationMessage}</div>
+                <div className="geolocation__link" onClick={getGeolocation}>{geolocationMessage}</div>
 
             }
 
             { isLoading &&
 
-                <div className='error'>
+                <div className="geolocation__error">
                     <h3>{errorMessage}</h3>
                     <h4>{subErrorMessage}</h4>
                 </ div>
             
             }
         
-        </>
+        </span>
 
     )
 
