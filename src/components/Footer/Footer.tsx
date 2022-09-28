@@ -41,30 +41,30 @@ export const Footer = () => {
     
     return(
 
-        <footer>
-            <div className="languages">
+        <footer className="footer">
+            <div className="footer__languages">
                 <div
-                    className='pt'
+                    className="footer__language pt"
                     onClick={() => {handleChangeLanguage('pt')}}
                 >
                     
                 </div>
 
                 <div 
-                    className='en'
+                    className="footer__language en"
                     onClick={() => {handleChangeLanguage('en')}}
                 >  
                 </div>
 
                 <div 
-                    className='es'
+                    className="footer__language es"
                     onClick={() => {handleChangeLanguage('es')}}
                 >
 
                 </div>
             </div>
             
-            <p>{ footerMessage }</p>
+            <p className="footer__message">{ footerMessage }</p>
         </footer>
 
 
