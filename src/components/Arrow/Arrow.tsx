@@ -4,7 +4,7 @@ export const Arrow = () => {
 
     return(
 
-        <div className="back-arrow">
+        <div className="arrow">
 
         </div>
     )
