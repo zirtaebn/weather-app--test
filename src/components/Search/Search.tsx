@@ -15,8 +15,8 @@ export const Search = () => {
 
     return(
 
-        <div className='search-input'>
-            <h1>{ searchMessage }</h1>
+        <div className="search">
+            <h1 className="search__title">{ searchMessage }</h1>
 
             <Autocomplete
                 apiKey={process.env.REACT_APP_GOOGLE_API_KEY}
@@ -35,7 +35,8 @@ export const Search = () => {
                     navigate('/weather');
                 }}
                 language = { state.language.name }
-                placeholder={ searchPlaceholderMessage }    
+                placeholder={ searchPlaceholderMessage }
+                className="search__input"    
             />
         </div>
 

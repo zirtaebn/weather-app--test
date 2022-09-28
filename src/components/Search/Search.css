@@ -1,14 +1,13 @@
-.search-input h1{
+.search__title {
 
     font-weight: 700;
     font-size: 43px;
     line-height: 52px;
     letter-spacing: 0.14em;
     margin-bottom: 20px;
-
 }
 
-.search-input input {
+.search__input {
 
     height: 50px;
     width: 100%;
@@ -16,29 +15,27 @@
     border: none;
     padding: 13px 15px;
     outline: none;
-    
 }
 
-.search-input input, .search-input input::placeholder {
-
+.search__input, .search__input::placeholder {
 
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;
-
     color: #6AA2D1;
 }
 
+/* google's CSS classes for Autocomplete and SearchBox widgets */
 .pac-container {
 
     border-radius: 0 0 10px 10px;
     border: none;
     box-shadow: 0px 13px 11px -8px #6AA2D1;
     margin-top: -8px;
-    
 }
 
 .pac-container:after{
+
     content:none !important;
 }
 
@@ -56,16 +53,12 @@
 .pac-item:first-child {
 
     border-top: 1px solid #D2B3C1;
-    /* padding-top: 10px; */
-    /* margin-top: 10px; */
 }
 
 .pac-item:hover, .pac-matched:hover, .pac-item-query:hover, .pac-item.pac-item-selected {
 
     color: #D2B3C1;
 }
-
-
 
 .pac-item, .pac-matched, .pac-item-query {
 
@@ -78,55 +71,49 @@
 
 @media(max-width:768px) {
 
-    .search-input  {
+    .search {
 
         max-width: 90%;
-       
     }
 
-    .search-input h1 {
+    .search__title {
 
         font-size: 35px;
         line-height: 45px;
         
         letter-spacing: 0.08em;
     }
-
-
 }
 
 @media(max-width:425px) {
 
-    .search-input  {
+    .search {
 
         max-width: 334px;
         text-align: center;
     }
 
-    .search-input h1 {
+    .search__title {
 
         font-size: 30px;
         line-height: 37px;
-
     }
 
-    .search-input input {
+    .search__input {
 
         width: 95%;
     }
 
-    .search-input input, .search-input input::placeholder {
+    .search__input, .search__input::placeholder {
 
         font-size: 16px;
         line-height: 20px;
     }
 
+    /* google's CSS classes for Autocomplete and SearchBox widgets */
     .pac-item, .pac-matched, .pac-item-query {
 
         font-size: 16px;
         line-height: 20px;
-    }
-
-
-  
+    }  
 }
