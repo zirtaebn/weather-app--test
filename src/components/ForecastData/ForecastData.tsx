@@ -70,9 +70,9 @@ export const ForecastData = () => {
                         </div>
 
                         <img src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`} alt='open weather icon' />
-                        <p>{weatherData.main.temp_max.toFixed(0)}°</p>
-                        <div className='temp-line'></div>
                         <p>{weatherData.main.temp_min.toFixed(0)}°</p>
+                        <div className='temp-line'></div>
+                        <p>{weatherData.main.temp_max.toFixed(0)}°</p>
                         <span>{weatherData.weather[0].description}</span>
                     </div>
                 
