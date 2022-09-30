@@ -105,6 +105,7 @@
     .forecast-data__item {
 
         justify-content: center;
+        margin-right: 12px;
     }
 
     .forecast-data__temp {
@@ -133,11 +134,16 @@
         margin: 5px 0 15px 0;
     }
 
+    .forecast-data__item {
+
+        margin-right: 0;
+    }
+
     .forecast-data__date {
         
         font-size: 12px;
         line-height: 15px;  
-        width: 75px;
+        width: 100px;
     }
  
     .forecast-data__image { 
