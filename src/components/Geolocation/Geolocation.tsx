@@ -5,13 +5,14 @@ import { useLanguageString } from '../../hooks/useLanguageString';
 
 import { useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
+import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
 
 export const Geolocation = () => {
 
     const { state, dispatch } = useContext(Context);
     const [ isLoading, setIsloading ] = useState(false);
     const navigate = useNavigate();
-    let { geolocationMessage, errorMessage, subErrorMessage }= useLanguageString();
+    const { geolocationMessage }= useLanguageString();
     
     const success = (pos:GeolocationPosition) => {
 
@@ -45,6 +46,17 @@ export const Geolocation = () => {
     
     }
 
+    if(isLoading) {
+
+        return (
+
+            <div className="geolocation__error">
+                <ErrorMessage />
+            </div>
+
+        )
+    }
+
     return(
 
         <span className="geolocation">
@@ -53,16 +65,6 @@ export const Geolocation = () => {
                 <div className="geolocation__link" onClick={getGeolocation}>{geolocationMessage}</div>
 
             }
-
-            { isLoading &&
-
-                <div className="geolocation__error">
-                    <h3>{errorMessage}</h3>
-                    <h4>{subErrorMessage}</h4>
-                </ div>
-            
-            }
-        
         </span>
 
     )
