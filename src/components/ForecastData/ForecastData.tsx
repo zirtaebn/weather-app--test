@@ -5,6 +5,7 @@ import { useLanguageString } from '../../hooks/useLanguageString';
 import { useFetch } from '../../hooks/useFetch';
 import { weatherDataType } from '../../types/weatherDataType';
 import { forecastDataType } from '../../types/forecastDataType';
+import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
 
 import { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -15,6 +16,7 @@ export const ForecastData = () => {
     const navigate = useNavigate();
     const [ forecastData, isLoading, isError ] = useFetch<forecastDataType>('forecast');
     const cityName = forecastData ? forecastData.city.name : '';
+    const { forecastDataMessage } = useLanguageString(); 
     const weatherDataList = forecastData?.list.filter((item:weatherDataType) => {
         const date = new Date(new Date().setHours(18)).getHours();
 
@@ -22,8 +24,7 @@ export const ForecastData = () => {
     
         return weatherDate === date
     });
-    let { forecastDataMessage, errorMessage, subErrorMessage } = useLanguageString(); 
-   
+    
     useEffect(() => {
 
         if(!state.adress.lat && !state.adress.lng) {
@@ -40,12 +41,7 @@ export const ForecastData = () => {
 
     if(isError) {
         
-        return (
-            <>
-                <h1>{errorMessage}</h1>
-                <h2>{subErrorMessage}</h2>
-            </>
-        )
+        return <ErrorMessage />
     }
     
 
