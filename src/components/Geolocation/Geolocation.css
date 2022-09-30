@@ -16,3 +16,14 @@
     margin-top: 10px;
     text-align: center;
 }
+
+.geolocation__error h1{
+
+    font-size: 35px;
+}
+
+.geolocation__error h2{
+
+    font-size: 20px;
+    margin: 0;    
+}
