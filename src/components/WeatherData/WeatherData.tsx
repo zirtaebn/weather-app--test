@@ -4,6 +4,7 @@ import { useLanguageString } from '../../hooks/useLanguageString';
 import { Context } from '../../contexts/Context';
 import { useFetch } from '../../hooks/useFetch';
 import { weatherDataType } from '../../types/weatherDataType';
+import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
 
 import { Link, useNavigate } from 'react-router-dom';
 import { useContext, useEffect } from 'react';
@@ -11,7 +12,7 @@ import { useContext, useEffect } from 'react';
 export const WeatherData = () => {
 
     const { state } = useContext(Context);
-    const { weatherDataMessage, errorMessage, subErrorMessage } = useLanguageString();
+    const { weatherDataMessage } = useLanguageString();
     const [ weatherData, isLoading, isError ] = useFetch<weatherDataType>('weather');
     const navigate = useNavigate();
 
@@ -32,12 +33,7 @@ export const WeatherData = () => {
 
     if(isError) {
 
-        return (
-            <>
-                <h1>{errorMessage}</h1>
-                <h2>{subErrorMessage}</h2>
-            </>
-        )
+        return <ErrorMessage />
     }
     
    
