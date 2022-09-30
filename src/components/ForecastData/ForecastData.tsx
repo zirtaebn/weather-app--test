@@ -6,6 +6,7 @@ import { useFetch } from '../../hooks/useFetch';
 import { weatherDataType } from '../../types/weatherDataType';
 import { forecastDataType } from '../../types/forecastDataType';
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
+import { Loading } from '../Loading/Loading';
 
 import { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -36,7 +37,8 @@ export const ForecastData = () => {
     },[]);
 
     if(isLoading) {
-        return <h1>...</h1>
+
+        return <Loading />
     }
 
     if(isError) {
