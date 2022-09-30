@@ -5,6 +5,7 @@ import { Context } from '../../contexts/Context';
 import { useFetch } from '../../hooks/useFetch';
 import { weatherDataType } from '../../types/weatherDataType';
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
+import { Loading } from '../Loading/Loading';
 
 import { Link, useNavigate } from 'react-router-dom';
 import { useContext, useEffect } from 'react';
@@ -28,7 +29,8 @@ export const WeatherData = () => {
     },[]);
 
     if(isLoading) {
-        return <h1>...</h1>
+
+        return <Loading />
     }
 
     if(isError) {
