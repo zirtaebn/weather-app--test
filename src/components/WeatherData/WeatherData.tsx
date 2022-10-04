@@ -25,7 +25,7 @@ export const WeatherData = () => {
         {
             refetchOnWindowFocus: false
         }
-    )
+    );
 
     useEffect(() => {
 
