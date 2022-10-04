@@ -15,7 +15,7 @@ import { useQuery } from 'react-query';
 export const ForecastData = () => {
 
     const { state } = useContext(Context);
-    const { forecastDataMessage } = useLanguageString();
+    const { forecastDataMessage } = useLanguageString(state);
     const navigate = useNavigate();
     const queryKey = 'forecast';
     const requestParams = openWeatherURL(queryKey, state);

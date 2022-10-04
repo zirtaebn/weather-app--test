@@ -1,8 +1,12 @@
-import { useLanguageString } from "../../hooks/useLanguageString";
+import { Context } from '../../contexts/Context';
+import { useLanguageString } from '../../hooks/useLanguageString';
+
+import { useContext } from 'react';
 
 export const ErrorMessage = () => {
 
-    const { errorMessage, subErrorMessage } = useLanguageString();
+    const { state } = useContext(Context);
+    const { errorMessage, subErrorMessage } = useLanguageString(state);
 
     return (
 

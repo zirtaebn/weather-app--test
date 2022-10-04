@@ -1,12 +1,8 @@
-import { useContext } from 'react';
-
-import { Context } from '../contexts/Context';
 import { languageStringType } from '../types/languageStringType';
+import { initialStateType } from '../contexts/Context';
 
-export const useLanguageString = () => {
-
-    const { state } = useContext(Context);
-    
+export const useLanguageString = (state: initialStateType) => {
+  
     const languageString:languageStringType = {
 
         footerMessage: '',

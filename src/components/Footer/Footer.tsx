@@ -9,7 +9,7 @@ import { useContext, useEffect } from 'react';
 export const Footer = () => {
 
     const { state, dispatch } = useContext(Context);
-    const { footerMessage } = useLanguageString();
+    const { footerMessage } = useLanguageString(state);
     const persistedData = usePersistedData('language',  state.language.name);
     
     useEffect(() => {

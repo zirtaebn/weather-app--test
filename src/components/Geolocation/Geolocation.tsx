@@ -4,15 +4,15 @@ import { Context } from "../../contexts/Context";
 import { useLanguageString } from '../../hooks/useLanguageString';
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
 
-import { useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useNavigate } from 'react-router-dom';
+import { useContext, useState } from 'react';
 
 export const Geolocation = () => {
 
     const { state, dispatch } = useContext(Context);
     const [ isLoading, setIsloading ] = useState(false);
     const navigate = useNavigate();
-    const { geolocationMessage }= useLanguageString();
+    const { geolocationMessage }= useLanguageString(state);
     
     const success = (pos:GeolocationPosition) => {
 

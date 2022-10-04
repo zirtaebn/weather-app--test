@@ -14,7 +14,7 @@ import { useQuery } from 'react-query';
 export const WeatherData = () => {
 
     const { state } = useContext(Context);
-    const { weatherDataMessage } = useLanguageString();
+    const { weatherDataMessage } = useLanguageString(state);
     const navigate = useNavigate();
     const queryKey = 'weather';
     const requestParams = openWeatherURL(queryKey, state);

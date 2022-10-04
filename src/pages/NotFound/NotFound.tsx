@@ -1,10 +1,15 @@
 import './NotFound.css';
 
 import { useLanguageString } from '../../hooks/useLanguageString';
+import { Context } from '../../contexts/Context';
+
+import { useContext } from 'react';
 
 export const NotFound = () => {
 
-    const { notFoundPageMessage } = useLanguageString();
+    const { state } = useContext(Context);
+
+    const { notFoundPageMessage } = useLanguageString(state);
    
     return(
 

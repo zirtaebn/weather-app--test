@@ -5,12 +5,12 @@ import { useLanguageString } from '../../hooks/useLanguageString';
 
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Autocomplete from "react-google-autocomplete";
+import Autocomplete from 'react-google-autocomplete';
 
 export const Search = () => {
 
     const { state, dispatch } = useContext(Context);
-    const { searchMessage, searchPlaceholderMessage } = useLanguageString();
+    const { searchMessage, searchPlaceholderMessage } = useLanguageString(state);
     const navigate = useNavigate();
 
     return(
