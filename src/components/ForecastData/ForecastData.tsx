@@ -2,22 +2,32 @@ import './ForecastData.css';
 
 import { Context } from '../../contexts/Context';
 import { useLanguageString } from '../../hooks/useLanguageString';
-import { useFetch } from '../../hooks/useFetch';
 import { weatherDataType } from '../../types/weatherDataType';
-import { forecastDataType } from '../../types/forecastDataType';
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
 import { Loading } from '../Loading/Loading';
+import { openWeatherURL } from '../../utils/openWeatherURL';
+import { api } from '../../api/api';
 
 import { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useQuery } from 'react-query';
 
 export const ForecastData = () => {
 
     const { state } = useContext(Context);
+    const { forecastDataMessage } = useLanguageString();
     const navigate = useNavigate();
-    const [ forecastData, isLoading, isError ] = useFetch<forecastDataType>('forecast');
-    const cityName = forecastData ? forecastData.city.name : '';
-    const { forecastDataMessage } = useLanguageString(); 
+    const queryKey = 'forecast';
+    const requestParams = openWeatherURL(queryKey, state);
+    const { data: forecastData, isLoading, isError } = useQuery([queryKey, state], 
+
+        () => api.fetchForecastData(requestParams),
+
+        {
+            refetchOnWindowFocus: false
+        }
+    );
+    const cityName = forecastData ? forecastData.city.name : ''; 
     const weatherDataList = forecastData?.list.filter((item:weatherDataType) => {
         const date = new Date(new Date().setHours(18)).getHours();
 
@@ -46,7 +56,6 @@ export const ForecastData = () => {
         return <ErrorMessage />
     }
     
-
     return (
         <div className="forecast-data">
             <>
