@@ -1,4 +1,4 @@
-import { Context, initialStateType } from '../contexts/Context';
+import { initialStateType } from '../contexts/Context';
 
 export const OPEN_WEATHER_BASE_URL = (parameter: string, state: initialStateType) => {
     
