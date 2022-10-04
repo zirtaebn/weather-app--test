@@ -2,20 +2,30 @@ import './WeatherData.css';
 
 import { useLanguageString } from '../../hooks/useLanguageString';
 import { Context } from '../../contexts/Context';
-import { useFetch } from '../../hooks/useFetch';
-import { weatherDataType } from '../../types/weatherDataType';
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
 import { Loading } from '../Loading/Loading';
+import { openWeatherURL } from '../../utils/openWeatherURL';
+import { api } from '../../api/api';
 
 import { Link, useNavigate } from 'react-router-dom';
 import { useContext, useEffect } from 'react';
+import { useQuery } from 'react-query';
 
 export const WeatherData = () => {
 
     const { state } = useContext(Context);
     const { weatherDataMessage } = useLanguageString();
-    const [ weatherData, isLoading, isError ] = useFetch<weatherDataType>('weather');
     const navigate = useNavigate();
+    const queryKey = 'weather';
+    const requestParams = openWeatherURL(queryKey, state);
+    const { data: weatherData, isLoading, isError } = useQuery([queryKey, state], 
+
+        () => api.fetchWeatherData(requestParams),
+
+        {
+            refetchOnWindowFocus: false
+        }
+    )
 
     useEffect(() => {
 
