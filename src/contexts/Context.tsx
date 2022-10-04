@@ -5,7 +5,7 @@ import { reducerActionType } from "../types/reducerActionType";
 
 import { useReducer, createContext} from "react";
 
-type initialStateType = {
+ export type initialStateType = {
 
     language:LanguageType, 
     adress:AdressType,
