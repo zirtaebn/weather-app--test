@@ -1,19 +1,20 @@
 import axios from 'axios';
+import { weatherDataType } from '../types/weatherDataType';
 
 const URL = 'https://api.openweathermap.org/data/2.5/';
 
-const fetchWeatherData = async (requestParams:string) => {
+const fetchWeatherData = async (requestParams:string): Promise<weatherDataType> => {
 
-    const weatherData = await axios.get(`${URL}${requestParams}`);
+    const response = await axios.get(`${URL}${requestParams}`);
 
-    return weatherData
+    return response.data
 }
 
 const fetchForecastData = async (requestParams:string) => {
 
-    const forecastData = await axios.get(`${URL}${requestParams}`);
+    const response = await axios.get(`${URL}${requestParams}`);
 
-    return forecastData
+    return response.data
 }
 
 export const api = {
