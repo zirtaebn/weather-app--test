@@ -5,7 +5,7 @@ import { Context } from '../../contexts/Context';
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
 import { Loading } from '../Loading/Loading';
 import { openWeatherURL } from '../../utils/openWeatherURL';
-import { api } from '../../api/api';
+import { openWeatherAPI } from '../../api/openWeatherAPI';
 
 import { Link, useNavigate } from 'react-router-dom';
 import { useContext, useEffect } from 'react';
@@ -20,7 +20,7 @@ export const WeatherData = () => {
     const requestParams = openWeatherURL(queryKey, state);
     const { data: weatherData, isLoading, isError } = useQuery([queryKey, state], 
 
-        () => api.fetchWeatherData(requestParams),
+        () => openWeatherAPI.fetchWeatherData(requestParams),
 
         {
             refetchOnWindowFocus: false
