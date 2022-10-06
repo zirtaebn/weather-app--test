@@ -28,12 +28,12 @@ export const ForecastData = () => {
         }
     );
     const cityName = forecastData ? forecastData.city.name : ''; 
-    const weatherDataList = forecastData?.list.filter((item:weatherDataType) => {
+    const weatherDataList = forecastData?.list.filter((weatherDataItem:weatherDataType) => {
         const date = new Date(new Date().setHours(18)).getHours();
 
-        const weatherDate = new Date(item.dt_txt).getHours();    
+        const weatherData = new Date(weatherDataItem.dt_txt).getHours();    
     
-        return weatherDate === date
+        return weatherData === date
     });
     
     useEffect(() => {
