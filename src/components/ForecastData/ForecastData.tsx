@@ -27,8 +27,7 @@ export const ForecastData = () => {
         }
     );
     
-    const cityName = forecastData?.cityName;
-    const forecastDataList = forecastData?.forecastDataList;
+     const { cityName, forecastDataList } = forecastData || {}
 
     useEffect(() => {
 
