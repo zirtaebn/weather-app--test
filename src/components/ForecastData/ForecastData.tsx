@@ -2,7 +2,6 @@ import './ForecastData.css';
 
 import { Context } from '../../contexts/Context';
 import { useLanguageString } from '../../hooks/useLanguageString';
-import { weatherDataType } from '../../types/weatherDataType';
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
 import { Loading } from '../Loading/Loading';
 import { openWeatherURL } from '../../utils/openWeatherURL';
@@ -27,15 +26,10 @@ export const ForecastData = () => {
             refetchOnWindowFocus: false
         }
     );
-    const cityName = forecastData ? forecastData.city.name : ''; 
-    const weatherDataList = forecastData?.list.filter((weatherDataItem:weatherDataType) => {
-        const date = new Date(new Date().setHours(18)).getHours();
+    
+    const cityName = forecastData?.cityName;
+    const weatherDataList = forecastData?.weatherDataList;
 
-        const weatherData = new Date(weatherDataItem.dt_txt).getHours();    
-    
-        return weatherData === date
-    });
-    
     useEffect(() => {
 
         if(!state.adress.lat && !state.adress.lng) {
@@ -59,7 +53,7 @@ export const ForecastData = () => {
     return (
         <div className="forecast-data">
             <>
-                <h1 className="forecast-data__title">{cityName.toUpperCase()}</h1>
+                <h1 className="forecast-data__title">{cityName?.toUpperCase()}</h1>
                 <h2 className="forecast-data__sub-title">{forecastDataMessage}</h2>
 
                 <ul className="forecast-data__list">
