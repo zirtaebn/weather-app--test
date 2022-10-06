@@ -15,15 +15,15 @@ const fetchForecastData = async (requestParams:string): Promise<forecastDataType
     const { data } = await axios.get(requestParams);
 
     const cityName = data.city.name; 
-    const weatherDataList = data?.list.filter((weatherDataItem:weatherDataType) => {
+    const forecastDataList = data?.list.filter((forecastDataItem:weatherDataType) => {
         const date = new Date(new Date().setHours(18)).getHours();
 
-        const weatherData = new Date(weatherDataItem.dt_txt).getHours();    
+        const forecastDataDate = new Date(forecastDataItem.dt_txt).getHours();    
     
-        return weatherData === date
+        return forecastDataDate === date
     });
 
-    return { cityName, weatherDataList }
+    return { cityName, forecastDataList }
 }
 
 export const openWeatherAPI = {

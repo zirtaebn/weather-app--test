@@ -28,7 +28,7 @@ export const ForecastData = () => {
     );
     
     const cityName = forecastData?.cityName;
-    const weatherDataList = forecastData?.weatherDataList;
+    const forecastDataList = forecastData?.forecastDataList;
 
     useEffect(() => {
 
@@ -57,12 +57,12 @@ export const ForecastData = () => {
                 <h2 className="forecast-data__sub-title">{forecastDataMessage}</h2>
 
                 <ul className="forecast-data__list">
-                    { weatherDataList?.map((weatherData, index) => (
+                    { forecastDataList?.map((forecastDataItem, index) => (
                     
                         <li className="forecast-data__item" key={index}>
                             <div className="forecast-data__date">
                                 {
-                                    new Date(weatherData.dt_txt).toLocaleDateString(
+                                    new Date(forecastDataItem.dt_txt).toLocaleDateString(
                                         
                                         `${state.language.name}`
                                         , 
@@ -71,11 +71,11 @@ export const ForecastData = () => {
                                 }
                             </div>
 
-                            <img className="forecast-data__image" src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`} alt='open weather icon' />
-                            <p className="forecast-data__temp">{weatherData.main.temp_min.toFixed(0)}°</p>
+                            <img className="forecast-data__image" src={`https://openweathermap.org/img/wn/${forecastDataItem.weather[0].icon}@2x.png`} alt='open weather icon' />
+                            <p className="forecast-data__temp">{forecastDataItem.main.temp_min.toFixed(0)}°</p>
                             <span className="forecast-data__temp-line"></span>
-                            <p className="forecast-data__temp">{weatherData.main.temp_max.toFixed(0)}°</p>
-                            <span className="forecast-data__description">{weatherData.weather[0].description}</span>
+                            <p className="forecast-data__temp">{forecastDataItem.main.temp_max.toFixed(0)}°</p>
+                            <span className="forecast-data__description">{forecastDataItem.weather[0].description}</span>
                         </li>
                  
                     ))}
