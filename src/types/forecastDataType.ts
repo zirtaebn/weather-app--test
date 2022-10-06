@@ -2,8 +2,6 @@ import { weatherDataType } from './weatherDataType';
 
 export type forecastDataType = {
 
-    city: {
-        name:string
-    },
-    list: weatherDataType[]
+    cityName:string, 
+    weatherDataList: weatherDataType[]
 }
