@@ -5,9 +5,9 @@ import axios from 'axios';
 
 const fetchWeatherData = async (requestParams:string): Promise<weatherDataType> => {
 
-    const response = await axios.get(requestParams);
+    const { data } = await axios.get(requestParams);
 
-    return response.data
+    return data
 }
 
 const fetchForecastData = async (requestParams:string): Promise<forecastDataType> => {
