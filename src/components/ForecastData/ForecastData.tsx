@@ -16,9 +16,9 @@ export const ForecastData = () => {
     const { state } = useContext(Context);
     const { forecastDataMessage } = useLanguageString(state);
     const navigate = useNavigate();
-    const queryKey = 'forecast';
-    const requestParams = openWeatherURL(queryKey, state);
-    const { data: forecastData, isLoading, isError } = useQuery([queryKey, state], 
+    const queryString = 'forecast';
+    const requestParams = openWeatherURL(queryString, state);
+    const { data: forecastData, isLoading, isError } = useQuery([queryString, state], 
 
         () => openWeatherAPI.fetchForecastData(requestParams),
 
