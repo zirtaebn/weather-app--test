@@ -4,7 +4,7 @@ import { useLanguageString } from '../../hooks/useLanguageString';
 import { Context } from '../../contexts/Context';
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
 import { Loading } from '../Loading/Loading';
-import { openWeatherURL } from '../../utils/openWeatherURL';
+import { openWeatherURL } from '../../services/openWeatherURL';
 import { openWeatherAPI } from '../../api/openWeatherAPI';
 
 import { Link, useNavigate } from 'react-router-dom';

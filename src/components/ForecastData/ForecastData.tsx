@@ -4,7 +4,7 @@ import { Context } from '../../contexts/Context';
 import { useLanguageString } from '../../hooks/useLanguageString';
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
 import { Loading } from '../Loading/Loading';
-import { openWeatherURL } from '../../utils/openWeatherURL';
+import { openWeatherURL } from '../../services/openWeatherURL';
 import { openWeatherAPI } from '../../api/openWeatherAPI';
 
 import { useContext, useEffect } from 'react';
