@@ -1,28 +1,28 @@
 import { languageStringType } from '../types/languageStringType';
 import { initialStateType } from '../contexts/Context';
 
+const languageString:languageStringType = {
+
+    footerMessage: '',
+    geolocationMessage: '',
+    forecastDataMessage: '',
+    searchMessage: '',
+    searchPlaceholderMessage: '',
+    weatherDataMessage: '', 
+    errorMessage: '',
+    subErrorMessage: '',
+    notFoundPageMessage: ''
+
+}
+
 export const useLanguageString = (state: initialStateType) => {
   
-    const languageString:languageStringType = {
-
-        footerMessage: '',
-        geolocationMessage: '',
-        forecastDataMessage: '',
-        searchMessage: '',
-        searchPlaceholderMessage: '',
-        weatherDataMessage: '', 
-        errorMessage: '',
-        subErrorMessage: '',
-        notFoundPageMessage: ''
-
-    }
-
     switch (state.language.name ) {
 
         case 'pt':
 
-            return {
-                ...languageString, 
+            return { 
+                ...languageString,
                 footerMessage:'Idioma selecionado: Português.',
                 geolocationMessage:'Ver previsão de onde você está',
                 forecastDataMessage:'Previsão para 5 dias',
