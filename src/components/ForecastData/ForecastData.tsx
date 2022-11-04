@@ -4,7 +4,6 @@ import { Context } from '../../contexts/Context';
 import { useLanguageString } from '../../hooks/useLanguageString';
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
 import { Loading } from '../Loading/Loading';
-import { openWeatherURL } from '../../helpers/openWeatherURL';
 import { openWeatherAPI } from '../../services/openWeatherAPI';
 
 import { useContext, useEffect } from 'react';
@@ -17,10 +16,9 @@ export const ForecastData = () => {
     const { forecastDataMessage } = useLanguageString(state);
     const navigate = useNavigate();
     const queryString = 'forecast';
-    const requestParams = openWeatherURL(queryString, state);
     const { data: forecastData, isLoading, isError } = useQuery([queryString, state], 
 
-        () => openWeatherAPI.fetchForecastData(requestParams),
+        () => openWeatherAPI.fetchForecastData(state),
 
         {
             refetchOnWindowFocus: false

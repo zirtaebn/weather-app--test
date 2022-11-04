@@ -4,7 +4,6 @@ import { useLanguageString } from '../../hooks/useLanguageString';
 import { Context } from '../../contexts/Context';
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
 import { Loading } from '../Loading/Loading';
-import { openWeatherURL } from '../../helpers/openWeatherURL';
 import { openWeatherAPI } from '../../services/openWeatherAPI';
 
 import { Link, useNavigate } from 'react-router-dom';
@@ -17,10 +16,9 @@ export const WeatherData = () => {
     const { weatherDataMessage } = useLanguageString(state);
     const navigate = useNavigate();
     const queryString = 'weather';
-    const requestParams = openWeatherURL(queryString, state);
     const { data: weatherData, isLoading, isError } = useQuery([queryString, state], 
 
-        () => openWeatherAPI.fetchWeatherData(requestParams),
+        () => openWeatherAPI.fetchWeatherData(state),
 
         {
             refetchOnWindowFocus: false
