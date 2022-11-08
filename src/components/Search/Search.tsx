@@ -1,6 +1,6 @@
 import './Search.css';
 
-import { Context } from '../../contexts/Context';
+import { IntlContext } from '../../contexts/IntlContext';
 import { useLanguageString } from '../../hooks/useLanguageString';
 
 import { useContext } from 'react';
@@ -9,7 +9,7 @@ import Autocomplete from 'react-google-autocomplete';
 
 export const Search = () => {
 
-    const { state, dispatch } = useContext(Context);
+    const { state, dispatch } = useContext(IntlContext);
     const { searchMessage, searchPlaceholderMessage } = useLanguageString(state);
     const navigate = useNavigate();
 

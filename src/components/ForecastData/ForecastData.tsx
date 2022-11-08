@@ -1,6 +1,6 @@
 import './ForecastData.css';
 
-import { Context } from '../../contexts/Context';
+import { IntlContext } from '../../contexts/IntlContext';
 import { useLanguageString } from '../../hooks/useLanguageString';
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
 import { Loading } from '../Loading/Loading';
@@ -12,7 +12,7 @@ import { useQuery } from 'react-query';
 
 export const ForecastData = () => {
 
-    const { state } = useContext(Context);
+    const { state } = useContext(IntlContext);
     const { forecastDataMessage } = useLanguageString(state);
     const navigate = useNavigate();
     const queryString = 'forecast';

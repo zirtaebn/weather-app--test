@@ -1,11 +1,11 @@
-import { Context } from '../../contexts/Context';
+import { IntlContext } from '../../contexts/IntlContext';
 import { useLanguageString } from '../../hooks/useLanguageString';
 
 import { useContext } from 'react';
 
 export const ErrorMessage = () => {
 
-    const { state } = useContext(Context);
+    const { state } = useContext(IntlContext);
     const { errorMessage, subErrorMessage } = useLanguageString(state);
 
     return (

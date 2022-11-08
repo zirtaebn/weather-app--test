@@ -1,7 +1,7 @@
 import './WeatherData.css';
 
 import { useLanguageString } from '../../hooks/useLanguageString';
-import { Context } from '../../contexts/Context';
+import { IntlContext } from '../../contexts/IntlContext';
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
 import { Loading } from '../Loading/Loading';
 import { openWeatherAPI } from '../../services/openWeatherAPI';
@@ -12,7 +12,7 @@ import { useQuery } from 'react-query';
 
 export const WeatherData = () => {
 
-    const { state } = useContext(Context);
+    const { state } = useContext(IntlContext);
     const { weatherDataMessage } = useLanguageString(state);
     const navigate = useNavigate();
     const queryString = 'weather';

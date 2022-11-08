@@ -1,6 +1,6 @@
 import { forecastDataType } from '../types/forecastDataType';
 import { weatherDataType } from '../types/weatherDataType';
-import { initialStateType } from '../contexts/Context';
+import { initialStateType } from '../contexts/IntlContext';
 
 import axios from 'axios';
 

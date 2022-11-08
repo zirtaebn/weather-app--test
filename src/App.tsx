@@ -4,7 +4,7 @@ import { Home } from './pages/Home/Home';
 import { Weather } from './pages/Weather/Weather';
 import { Forecast } from './pages/Forecast/Forecast';
 import { NotFound } from './pages/NotFound/NotFound';
-import { ContextProvider } from './contexts/Context'
+import { IntlContextProvider } from './contexts/IntlContext'
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -13,7 +13,7 @@ function App() {
 
     <div className='App'>
 
-        <ContextProvider>
+        <IntlContextProvider>
           <BrowserRouter>
             <Routes>
               <Route path='/' element={<Home />} />
@@ -22,7 +22,7 @@ function App() {
               <Route path='*' element={<NotFound />} />
             </Routes>
           </BrowserRouter>
-        </ContextProvider>
+        </IntlContextProvider>
     </div>
   );
 }

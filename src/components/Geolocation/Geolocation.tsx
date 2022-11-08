@@ -1,6 +1,6 @@
 import './Geolocation.css';
 
-import { Context } from "../../contexts/Context";
+import { IntlContext } from "../../contexts/IntlContext";
 import { useLanguageString } from '../../hooks/useLanguageString';
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
 
@@ -9,7 +9,7 @@ import { useContext, useState } from 'react';
 
 export const Geolocation = () => {
 
-    const { state, dispatch } = useContext(Context);
+    const { state, dispatch } = useContext(IntlContext);
     const [ isLoading, setIsloading ] = useState(false);
     const navigate = useNavigate();
     const { geolocationMessage }= useLanguageString(state);

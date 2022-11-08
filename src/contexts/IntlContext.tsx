@@ -5,14 +5,14 @@ import { reducerActionType } from "../types/reducerActionType";
 
 import { useReducer, createContext} from "react";
 
- export type initialStateType = {
+export type initialStateType = {
 
     language:LanguageType, 
     adress:AdressType,
     temp:TempType
 }
 
-type ContextType = {
+type IntlContextType = {
 
     state:initialStateType,
     dispatch: React.Dispatch<any>
@@ -26,7 +26,7 @@ const initialState = {
 }
 
 
-export const Context = createContext<ContextType>({
+export const IntlContext = createContext<IntlContextType>({
     state:initialState,
     dispatch: () => null
 })
@@ -44,14 +44,14 @@ interface Props {
     children: React.ReactNode;
 }
 
-export const ContextProvider: React.FC<Props> = ({ children }) => {
+export const IntlContextProvider: React.FC<Props> = ({ children }) => {
 
     const [ state, dispatch ] = useReducer(mainReducer, initialState);
 
     return (
 
-        <Context.Provider value = {{ state, dispatch}}>
+        <IntlContext.Provider value = {{ state, dispatch}}>
             { children }
-        </Context.Provider>
+        </IntlContext.Provider>
     )
 }

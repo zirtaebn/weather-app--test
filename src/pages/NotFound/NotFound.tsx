@@ -1,14 +1,14 @@
 import './NotFound.css';
 
 import { useLanguageString } from '../../hooks/useLanguageString';
-import { Context } from '../../contexts/Context';
+import { IntlContext } from '../../contexts/IntlContext';
 import { Footer } from '../../components/Footer/Footer';
 
 import { useContext } from 'react';
 
 export const NotFound = () => {
 
-    const { state } = useContext(Context);
+    const { state } = useContext(IntlContext);
 
     const { notFoundPageMessage } = useLanguageString(state);
    

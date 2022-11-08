@@ -1,13 +1,13 @@
 import './Switch.css';
 
-import { Context } from '../../contexts/Context';
+import { IntlContext } from '../../contexts/IntlContext';
 import { usePersistedData } from '../../hooks/usePersistedData';
 
 import { useContext, useEffect } from 'react';
 
 export const Switch = () => {
 
-    const { state, dispatch } = useContext(Context);
+    const { state, dispatch } = useContext(IntlContext);
     const persistedData = usePersistedData('temp',  JSON.stringify(state.temp.isToggle));
     
     const onToggle = () => {

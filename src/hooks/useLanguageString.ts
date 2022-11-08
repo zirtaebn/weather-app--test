@@ -1,5 +1,5 @@
 import { languageStringType } from '../types/languageStringType';
-import { initialStateType } from '../contexts/Context';
+import { initialStateType } from '../contexts/IntlContext';
 
 const languageString:languageStringType = {
 

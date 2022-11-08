@@ -1,6 +1,6 @@
 import './Footer.css';
 
-import { Context } from '../../contexts/Context';
+import { IntlContext } from '../../contexts/IntlContext';
 import { usePersistedData } from '../../hooks/usePersistedData';
 import { useLanguageString } from '../../hooks/useLanguageString';
 
@@ -8,7 +8,7 @@ import { useContext, useEffect } from 'react';
 
 export const Footer = () => {
 
-    const { state, dispatch } = useContext(Context);
+    const { state, dispatch } = useContext(IntlContext);
     const { footerMessage } = useLanguageString(state);
     const persistedData = usePersistedData('language',  state.language.name);
     
