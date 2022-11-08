@@ -1,7 +1,7 @@
 import { LanguageType, languageInitialState, languageReducer} from '../reduces/languageReducer';
 import { AdressType, adressInitialState, adressReducer} from '../reduces/adressReducer';
 import { TempType, tempInitialState, tempReducer} from '../reduces/tempReducer';
-import { reducerActionType } from "../types/reducerActionType";
+import { reducerActionType } from '../types/reducerActionType';
 
 import { useReducer, createContext} from "react";
 
@@ -50,7 +50,7 @@ export const IntlContextProvider: React.FC<Props> = ({ children }) => {
 
     return (
 
-        <IntlContext.Provider value = {{ state, dispatch}}>
+        <IntlContext.Provider value = {{ state, dispatch }}>
             { children }
         </IntlContext.Provider>
     )
