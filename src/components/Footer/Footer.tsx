@@ -45,6 +45,7 @@ export const Footer = () => {
             <div className="footer__languages">
                 <div
                     className="footer__language pt"
+                    aria-label="change the language to portuguese"
                     onClick={() => {handleChangeLanguage('pt')}}
                 >
                     
@@ -52,12 +53,14 @@ export const Footer = () => {
 
                 <div 
                     className="footer__language en"
+                    aria-label="change the language to english"
                     onClick={() => {handleChangeLanguage('en')}}
                 >  
                 </div>
 
                 <div 
                     className="footer__language es"
+                    aria-label="change the language to spanish"
                     onClick={() => {handleChangeLanguage('es')}}
                 >
 
