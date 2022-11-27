@@ -27,7 +27,7 @@ export const WeatherData = () => {
 
     useEffect(() => {
 
-        if(!state.adress.lat && !state.adress.lng) {
+        if(!state.address.lat && !state.address.lng) {
 
             navigate('/');
 

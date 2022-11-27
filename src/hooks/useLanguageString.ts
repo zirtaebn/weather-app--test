@@ -16,7 +16,7 @@ const languageString:languageStringType = {
 }
 
 export const useLanguageString = (state: initialStateType) => {
-  
+
     switch (state.language.name ) {
 
         case 'pt':

@@ -1,24 +1,24 @@
 import { reducerActionType } from '../types/reducerActionType';
 
-export type AdressType = {
+export type addressType = {
 
     lat:string,
     lng:string,
     
 }
 
-export const adressInitialState:AdressType = {
+export const addressInitialState:addressType = {
 
     lat: '',
     lng: '',
     
 }
 
-export const adressReducer = (state:AdressType, action:reducerActionType) => {
+export const addressReducer = (state:addressType, action:reducerActionType) => {
 
     switch (action.type) {
 
-        case 'CHANGE_ADRESS':
+        case 'CHANGE_ADDRESS':
 
             return {...state, lat: action.payload.lat, lng:action.payload.lng}
         

@@ -20,7 +20,7 @@ export const Geolocation = () => {
 
         dispatch({
 
-            type: 'CHANGE_ADRESS',
+            type: 'CHANGE_ADDRESS',
             payload: {
     
                 lat: pos.coords.latitude, 
@@ -60,7 +60,7 @@ export const Geolocation = () => {
     return(
 
         <span className="geolocation">
-            { state.adress &&
+            { state.address &&
 
                 <div className="geolocation__link" onClick={getGeolocation}>{geolocationMessage}</div>
 
