@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[COMPONENTS]: Footer it should display footer message in English 1`] = `
+<p
+  class="footer__message"
+>
+  Selected language: English.
+</p>
+`;
+
+exports[`[COMPONENTS]: Footer it should display footer message in Portuguese 1`] = `
+<p
+  class="footer__message"
+>
+  Idioma selecionado: Português.
+</p>
+`;
+
+exports[`[COMPONENTS]: Footer it should display footer message in Spanish 1`] = `
+<p
+  class="footer__message"
+>
+  Idioma seleccionado: Español.
+</p>
+`;
+
+exports[`[COMPONENTS]: Footer it should render correctly 1`] = `
+<div
+  aria-label="change the language to portuguese"
+  class="footer__language pt"
+  data-testid="pt-br-language-icon"
+/>
+`;

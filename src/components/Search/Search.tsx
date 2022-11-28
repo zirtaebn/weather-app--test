@@ -24,7 +24,7 @@ export const Search = () => {
                     
                     dispatch({
 
-                        type: 'CHANGE_ADRESS',
+                        type: 'CHANGE_ADDRESS',
                         payload: {
                 
                             lat: place.geometry?.location?.lat(), 

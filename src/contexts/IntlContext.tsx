@@ -1,5 +1,5 @@
 import { LanguageType, languageInitialState, languageReducer} from '../reduces/languageReducer';
-import { AdressType, adressInitialState, adressReducer} from '../reduces/adressReducer';
+import { addressType, addressInitialState, addressReducer} from '../reduces/adressReducer'
 import { TempType, tempInitialState, tempReducer} from '../reduces/tempReducer';
 import { reducerActionType } from '../types/reducerActionType';
 
@@ -8,20 +8,19 @@ import { useReducer, createContext} from "react";
 export type initialStateType = {
 
     language:LanguageType, 
-    adress:AdressType,
+    address:addressType,
     temp:TempType
 }
 
 type IntlContextType = {
-
-    state:initialStateType,
+    state: initialStateType,
     dispatch: React.Dispatch<any>
 }
 
 const initialState = {
 
     language: languageInitialState,
-    adress:adressInitialState,
+    address:addressInitialState,
     temp:tempInitialState
 }
 
@@ -34,7 +33,7 @@ export const IntlContext = createContext<IntlContextType>({
 const mainReducer = (state:initialStateType, action:reducerActionType) => ({
 
     language: languageReducer(state.language, action), 
-    adress: adressReducer(state.adress, action), 
+    address: addressReducer(state.address, action), 
     temp: tempReducer(state.temp, action)
 })
 
